@@ -28,12 +28,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Codedor\\SocialMediaLink\\": "src/"
+            "Codedor\\SocialMediaLinks\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-          "Codedor\\SocialMediaLink\\Tests\\": "tests/"
+          "Codedor\\SocialMediaLinks\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -43,10 +43,10 @@
     "extra": {
         "laravel": {
           "providers": [
-            "Codedor\\SocialMediaLink\\Providers\\SocialMediaLinkServiceProvider"
+            "Codedor\\SocialMediaLinks\\Providers\\SocialMediaLinksServiceProvider"
           ],
           "aliases": {
-              "Share": "Codedor\\SocialMediaLink\\Facades\\ShareFacade"
+              "Share": "Codedor\\SocialMediaLinks\\Facades\\ShareFacade"
           },
           "dont-discover": [
             "jorenvanhocht/laravel-share"

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * Class Translatable
  *
- * @package Codedor\SocialMediaLink\Facades
+ * @package Codedor\SocialMediaLinks\Facades
  * @author  Sofian Mourabit <sofian@codedor.be>
  * @since   2019-10-02
  *
