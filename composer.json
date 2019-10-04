@@ -1,0 +1,60 @@
+{
+    "name": "codedor/laravel-social-media-link",
+    "description": "A Laravel package for social sharing. Uses jorenvanhocht/laravel-share under the hood.",
+    "keywords": [
+        "laravel",
+        "social",
+        "sharing",
+        "social media links",
+        "codedor",
+        "Code d'Or"
+    ], 
+    "homepage": "https://codedor.be",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sofian Mourabit",
+            "email": "sofian@codedor.be",
+            "homepage": "https://codedor.be"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "illuminate/support": "~5.8|^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.8|^4.0",
+        "phpunit/phpunit": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Codedor\\SocialMediaLink\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+          "Codedor\\SocialMediaLink\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+      "test": "vendor/bin/phpunit",
+      "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "extra": {
+        "laravel": {
+          "providers": [
+            "Codedor\\SocialMediaLink\\Providers\\SocialMediaLinkServiceProvider"
+          ],
+          "aliases": {
+              "Share": "Codedor\\SocialMediaLink\\Facades\\ShareFacade"
+          },
+          "dont-discover": [
+            "jorenvanhocht/laravel-share"
+          ]
+        }
+      },
+    "config": {
+      "sort-packages": true,
+      "optimize-autoloader": true
+    }
+}
