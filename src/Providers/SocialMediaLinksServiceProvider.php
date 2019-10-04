@@ -34,9 +34,6 @@ class SocialMediaLinksServiceProvider extends ServiceProvider
 
                     __DIR__ . '/../../dist/js' =>
                         public_path('/vendor/social-media-links/js'),
-
-                    __DIR__ . '/../../resources/lang' =>
-                        resource_path('lang/vendor/social-media-links')
                 ],
                 ['social-media-links', 'codedor-social-media-links']
             );
