@@ -69,8 +69,6 @@ The easiest way to share a page is to use:
 Share::currentPage('Page Title')->toFacebook();
 ```
 
-
-
 ### Creating multiple social media Links
 
 You can easely create multiple share links at once by chaining the social methods:
@@ -88,38 +86,33 @@ Share::currentPage('Page Title')
 
 ### Fontawesome
 
-If you are already including Fontawesome in your project, you can change the default icon you want to use in:
+You can change the default Fontawesome icon you want to use in:
 
  ```config/social-media-links.php```
 
 Laravel Social media links supports Font Awesome v5,
 
 
+#### Add extra classes to the social media links
 
-#### Sharing a custom url
-
-You can specify the page you which to share manually using the `page` function
-
-```php
-Share::page('https://example.com/your-page')->toFacebook();
-```
-
-#### Add extra classes and to the social media links
-
-You can simply add extra class(es) or id('s) by passing an array as the third parameter on the page method.
+You can simply add extra class(es) by passing an array as the second parameter on the currentPage method.
 
 ```php
-Share::page('http://jorenvanhocht.be', null, ['class' => 'my-class', 'id' => 'my-id'])
-    ->facebook();
+Share::currentPage('Page Title', ['class' => 'my-class'])
+    ->toFacebook();
 ```
 
-Which will result in the following html
+Which will generate following html
 
 ```html
-<div id="social-links">
-	<ul>
-		<li><a href="https://www.facebook.com/sharer/sharer.php?u=http://jorenvanhocht.be" class="social-button my-class" id="my-id"><span class="fa fa-facebook-official"></span></a></li>
-	</ul>
+<div id="js-social-media" class="social-media">
+    <ul class="social-media-links">
+        <li>
+            <a class="" href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/your-page">
+                <i class="fab fa-lg fa-facebook-square"></i>
+            </a>
+        </li>
+    </ul>
 </div>
 ```
 
@@ -128,26 +121,39 @@ Which will result in the following html
 By default social links will be wrapped in the following html
 
 ```html
-<div id="social-links">
+<div id="js-social-media" class="social-media">
 	<ul>
-		<!-- social links will be added here -->
+		<!-- social media links will be added here -->
 	</ul>
 </div>
 ```
 
-This can be customised by passing the prefix & suffix as a parameter.
+This can be customised by passing the prefix as the third and suffix as the fourth parameter.
 
 ```php
-Share::page('http://jorenvanhocht.be', null, [], '<ul>', '</ul>')
-            ->facebook();
+Share::currentPage('Page Title', [], '<ul id="js-social-media" class="social-media my-class">', '</ul>')
+        ->toFacebook();
 ```
+Please keep in mind you need to have the js-social-media id present for the javascript to do its magic.
 
 This will output the following html.
 
 ```html
-<ul>
-	<li><a href="https://www.facebook.com/sharer/sharer.php?u=http://jorenvanhocht.be" class="social-button " id=""><span class="fa fa-facebook-official"></span></a></li>
+<ul id="js-social-media" class="social-media-links">
+    <li>
+        <a class="" href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/your-page">
+            <i class="fab fa-lg fa-facebook-square"></i>
+        </a>
+    </li>
 </ul>
+```
+
+#### Sharing a custom url
+
+You can specify the page you which to share manually using the `page` function
+
+```php
+Share::page('https://example.com/your-page')->toFacebook();
 ```
 
 ## Changelog

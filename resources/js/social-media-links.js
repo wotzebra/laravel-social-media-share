@@ -21,7 +21,7 @@ sharingWrapper.addEventListener('click', openPopup, false)
 function openPopup (event) {
   if (windowObjectReference == null || windowObjectReference.closed) {
 
-    if (event.target.parentNode.classList.contains('js-share-link')) {
+    if (event.target.parentNode.classList.contains('js-social-media-link')) {
 
       const verticalPos = Math.floor((window.innerWidth - popupSize.width) / 2)
       const horisontalPos = Math.floor((window.innerHeight - popupSize.height) / 2)
