@@ -29,12 +29,13 @@ Add the following line to any blade temaplte where you want the social media lin
 ```
 
 To pull in the CSS add this line to pull in to the bottom of your </head> in your default layout
+
 ```blade
-...
 @stack('css')
 ```
 
 To pull in the javascript add this line right before the  closing </body> tag in your default layout
+
 ```blade
 ...
 @stack('scripta')
