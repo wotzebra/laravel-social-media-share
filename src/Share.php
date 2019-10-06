@@ -67,6 +67,11 @@ class Share
         return $this;
     }
 
+     /**
+     * Facebook share link
+     *
+     * @return $this
+     */
     public function toFacebook()
     {
         $entity = new Services\Facebook();
@@ -76,6 +81,11 @@ class Share
         return $this;
     }
 
+     /**
+     * Linkedin share link
+     *
+     * @return $this
+     */
     public function toLinkedin($summary)
     {
         $entity = new Services\Linkedin($summary);
@@ -85,9 +95,70 @@ class Share
         return $this;
     }
 
+     /**
+     * Twitter share link
+     *
+     * @return $this
+     */
     public function toTwitter()
     {
         $entity = new Services\Twitter();
+
+        $this->html .=  $entity->buildUrl($this->url, $this->title);
+
+        return $this;
+    }
+
+     /**
+     * Whatsapp share link
+     *
+     * @return $this
+     */
+    public function toWhatsapp()
+    {
+        $entity = new Services\Whatsapp();
+
+        $this->html .=  $entity->buildUrl($this->url, $this->title);
+
+        return $this;
+    }
+
+     /**
+     * Telegram share link
+     *
+     * @return $this
+     */
+    public function toTelegram()
+    {
+        $entity = new Services\Telegram();
+
+        $this->html .=  $entity->buildUrl($this->url, $this->title);
+
+        return $this;
+    }
+
+     /**
+     * Telegram share link
+     *
+     * @return $this
+     */
+    public function toReddit()
+    {
+        $entity = new Services\Reddit();
+
+        $this->html .=  $entity->buildUrl($this->url, $this->title);
+
+        return $this;
+    }
+
+     /**
+     * Pinterest share link
+     *
+     * @return $this
+     */
+    public function toPinterest()
+    {
+        $entity = new Services\Pinterest();
 
         $this->html .=  $entity->buildUrl($this->url, $this->title);
 

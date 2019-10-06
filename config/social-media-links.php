@@ -24,7 +24,6 @@ return [
         ],
         'whatsapp' => [
             'icon' => 'fab fa-lg fa-whatsapp-square',
-            'extra' => ['mini' => 'true'],
         ],
         'pinterest' => [
             'icon' => 'fab fa-lg fa-pinterest-square',

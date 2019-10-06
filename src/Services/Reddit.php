@@ -6,30 +6,30 @@ use Codedor\SocialMediaLinks\Services\AbstractService;
 use Illuminate\Support\Facades\Config;
 
 /**
- * Class Twitter
+ * Class Reddit
  *
  * @package Codedor\SocialMediaLinks
  * @author  Sofian Mourabit <sofian@codedor.be>
  * @since   2019-10-02
  */
 
-class Twitter extends AbstractService
+class Reddit extends AbstractService
 {
 
     /** @var string */
-    protected $base = 'https://twitter.com/intent/tweet?';
+    protected $base = 'https://www.reddit.com/submit?';
     /** @var string */
     protected $icon;
 
     public function __construct()
     {
-        $this->icon = Config::get('social-media-links.services.twitter.icon');
+        $this->icon = Config::get('social-media-links.services.reddit.icon');
     }
 
     public function buildUrl(string $url, string $title)
     {
         $baseUrl = $this->base .
-        'text=' . urlencode($title) .
+        'title=' . urlencode($title) .
         '&url=' . $url;
 
         $link = $this->buildLink($baseUrl, $this->icon);
