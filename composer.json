@@ -47,10 +47,7 @@
           ],
           "aliases": {
               "Share": "Codedor\\SocialMediaLinks\\Facades\\ShareFacade"
-          },
-          "dont-discover": [
-            "jorenvanhocht/laravel-share"
-          ]
+          }
         }
       },
     "config": {
