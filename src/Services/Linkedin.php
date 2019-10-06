@@ -6,30 +6,39 @@ use Codedor\SocialMediaLinks\Services\AbstractService;
 use Illuminate\Support\Facades\Config;
 
 /**
- * Class Twitter
+ * Class Linkedin
  *
  * @package Codedor\SocialMediaLinks
  * @author  Sofian Mourabit <sofian@codedor.be>
  * @since   2019-10-02
  */
 
-class Twitter extends AbstractService
+class Linkedin extends AbstractService
 {
 
     /** @var string */
-    protected $base = 'https://twitter.com/intent/tweet?';
+    protected $base = 'http://www.linkedin.com/shareArticle?';
     /** @var string */
     protected $icon;
+    /** @var string */
+    protected $mini;
+    /** @var string */
+    protected $summary;
 
-    public function __construct()
+    public function __construct($summary)
     {
-        $this->icon = Config::get('social-media-links.services.twitter.icon');
+        $this->summary = $summary;
+
+        $this->mini = Config::get('social-media-links.services.linkedin.mini');
+        $this->icon = Config::get('social-media-links.services.linkedin.icon');
     }
 
     public function buildUrl(string $url, string $title)
     {
         $baseUrl = $this->base .
-        'title=' . urlencode($title) .
+        'mini=' . $this->mini .
+        '&title=' . urlencode($title) .
+        '&summary=' . urlencode($this->summary) .
         '&url=' . $url;
 
         $link = $this->buildLink($baseUrl, $this->icon);
