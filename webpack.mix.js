@@ -12,8 +12,8 @@ const mix = require('laravel-mix')
  */
 mix.setPublicPath('dist')
   .js('resources/js/social-media-links.js', 'js')
-  .sourceMaps()
   .sass('resources/sass/social-media-links.scss', 'css')
+  .sourceMaps()
   .webpackConfig({
     devtool: 'source-map'
   })
