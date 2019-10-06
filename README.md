@@ -28,13 +28,13 @@ Add the following line to any blade temaplte where you want the social media lin
 
 ```
 
-To pull in the CSS add this line to pull in to the bottom of your HEAD tag in your default layout
+To pull in the CSS add this line to the bottom of your HEAD tag in your **default.blade.php** file
 
 ```blade
 @stack('head')
 ```
 
-To pull in the javascript add this line right before the  closing BODY tag in your default layout
+To pull in the javascript add this line right **before** the closing BODY tag in your **default.blade.php** file
 
 ```blade
 @stack('scripts')
@@ -43,7 +43,7 @@ To pull in the javascript add this line right before the  closing BODY tag in yo
 This generates:
 
 ```html
-<div id="js-social-media" class="social-media">
+<div id="js-social-media-links" class="social-media">
     <ul class="social-media-links">
         <li>
             <a class="js-social-media-link" href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/your-page">
@@ -98,18 +98,18 @@ Share::currentPage('Page Title')
 
 ## Options
 
-### Fontawesome
+### Font Awesome
 
-You can change the default Fontawesome icon you want to use in the config file:
+You can change the default icons you want to use in the config file:
 
  ```config/social-media-links.php```
 
-Laravel Social media links uses Font Awesome v5 by default but you can replace it to any version you like,
+Laravel Social media links uses Font Awesome v5 by default but you can replace it to any version you are using.
 
 
 ### Add extra classes to the social media links
 
-You can simply add extra class(es) by passing an array as the second parameter on the currentPage method.
+You can add extra class(es) by passing an array as the second parameter on the currentPage method.
 
 ```php
 Share::currentPage('Page Title', ['class' => 'my-class'])
@@ -119,7 +119,7 @@ Share::currentPage('Page Title', ['class' => 'my-class'])
 Which will generate following html
 
 ```html
-<div id="js-social-media" class="social-media">
+<div id="js-social-media-links" class="social-media">
     <ul class="social-media-links">
         <li>
             <a class="js-social-media-link my-class" href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/your-page">
@@ -135,7 +135,7 @@ Which will generate following html
 By default social links will are wrapped in the following html
 
 ```html
-<div id="js-social-media" class="social-media">
+<div id="js-social-media-links" class="social-media">
     <ul>
         <!-- social media links will be added here -->
     </ul>
@@ -145,15 +145,15 @@ By default social links will are wrapped in the following html
 This can be customised by passing the prefix as the third and suffix as the fourth parameter.
 
 ```php
-Share::currentPage('Page Title', [], '<ul id="js-social-media" class="social-media my-class">', '</ul>')
+Share::currentPage('Page Title', [], '<ul id="js-social-media-links" class="social-media my-class">', '</ul>')
         ->toFacebook();
 ```
-Please keep in mind you need to have the **js-social-media** id  and present for the javascript to do its magic.
+Please keep in mind you need to have the **js-social-media-links** id present for the javascript to do its magic.
 
 This will output the following html.
 
 ```html
-<ul id="js-social-media" class="social-media-links">
+<ul id="js-social-media-links" class="social-media-links">
     <li>
         <a class="js-social-media-link" href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/your-page">
             <i class="fab fa-lg fa-facebook-square"></i>
@@ -185,7 +185,7 @@ However this requires you to add the following lines to your webpack.mix.js file
   .sass('resources/sass/social-media-links.scss', 'css')
 ```
 
-And update the **resources/views/vendor/social_media_links.blade.php**
+And update the asset links in **resources/views/vendor/social_media_links.blade.php** to:
 ```html
  <link href="{{ mix('css/social-media-links.css') }}"
     rel="stylesheet" 
