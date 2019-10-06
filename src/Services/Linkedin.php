@@ -2,53 +2,39 @@
 
 namespace Codedor\SocialMediaLinks\Services;
 
+use Codedor\SocialMediaLinks\Services\AbstractService;
+use Illuminate\Support\Facades\Config;
+
 /**
- * Class Linkedin
+ * Class Twitter
  *
  * @package Codedor\SocialMediaLinks
  * @author  Sofian Mourabit <sofian@codedor.be>
  * @since   2019-10-02
  */
 
-class Linkedin extends \Codedor\SocialMediaLinks\Share
+class Twitter extends AbstractService
 {
 
     /** @var string */
-    protected $base = 'http://www.linkedin.com/shareArticle?';
-    /** @var string */
-    protected $mini;
+    protected $base = 'https://twitter.com/intent/tweet?';
     /** @var string */
     protected $icon;
 
     public function __construct()
     {
-        $this->icon = config('social-media-links.services.linkedin.icon');
-        $this->mini = config('social-media-links.services.linkedin.mini');
+        $this->icon = Config::get('social-media-links.services.twitter.icon');
     }
 
-    public function toLinkedin(string $summary)
+    public function buildUrl(string $url, string $title)
     {
         $baseUrl = $this->base .
-        'mini=' . $this->mini .
-        '&title=' . $this->title .
-        '&summary=' . urlencode($summary) .
-        '&url=' . $this->url;
+        'title=' . urlencode($title) .
+        '&url=' . $url;
 
-        $this->buildLink($baseUrl, $this->icon);
+        $link = $this->buildLink($baseUrl, $this->icon);
 
-        return $this;
-    }
-
-
-    public function getLinkedinUrl(string $summary): string
-    {
-        $baseUrl = $this->base .
-         'mini=' . $this->mini .
-         '&title=' . $this->title .
-         '&summary=' . urlencode($summary) .
-         '&url=' . $this->url;
-
-        return $baseUrl;
+        return $link;
     }
 
 }

@@ -2,6 +2,9 @@
 
 namespace Codedor\SocialMediaLinks\Services;
 
+use Codedor\SocialMediaLinks\Services\AbstractService;
+use Illuminate\Support\Facades\Config;
+
 /**
  * Class Twitter
  *
@@ -10,7 +13,7 @@ namespace Codedor\SocialMediaLinks\Services;
  * @since   2019-10-02
  */
 
-class Twitter extends \Codedor\SocialMediaLinks\Share
+class Twitter extends AbstractService
 {
 
     /** @var string */
@@ -20,18 +23,17 @@ class Twitter extends \Codedor\SocialMediaLinks\Share
 
     public function __construct()
     {
-        $this->icon = config('social-media-links.services.linkedin.icon');
+        $this->icon = Config::get('social-media-links.services.twitter.icon');
     }
 
-    public function toTwitter()
+    public function buildUrl(string $url, string $title)
     {
         $baseUrl = $this->base .
-            '?text=' . $this->title .
-            '&url=';
+        'title=' . urlencode($title) .
+        '&url=' . $url;
 
-        $this->buildLink($baseUrl, $this->icon);
+        $link = $this->buildLink($baseUrl, $this->icon);
 
-        return $this;
+        return $link;
     }
-
 }

@@ -2,7 +2,7 @@
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
-This package allows you to drop a social media links component on any page in your application. It can be used renderless without any dependencies or with a couple of default styling options using built-in SVG's or Font Awesome.
+This package allows you to drop a social media links component on any page in your application. It can be used using Font Awesome and some default css or renderless without any styling and dependencies using SVG's.
 This package is heavily inspired by the jorenvanhocht/laravel-share package.
 
 ## Installation
@@ -24,7 +24,20 @@ php artisan vendor:publish --tag=codedor-social-media-links
 Add the following line to any blade temaplte where you want the social media links to appear.
 
 ```blade
-@include('share::components.social_media_links', ['title' => $model->title, 'linkedinSummary' => $model->intro ])
+@include('vendor.social-media-links.social_media_links', ['title' => $model->title, 'linkedinSummary' => $model->intro ])
+
+```
+
+To pull in the CSS add this line to pull in to the bottom of your </head> in your default layout
+```blade
+...
+@stack('css')
+```
+
+To pull in the javascript add this line right before the  closing </body> tag in your default layout
+```blade
+...
+@stack('scripta')
 ```
 
 This generates:
@@ -51,7 +64,7 @@ This generates:
 </div>
 ```
 
-Edit the resources/views/vendor/social_media_links.blade.php view to add or remove services.
+Go to resources/views/vendor/social_media_links.blade.php to add or remove social media services.
 
 ### Available services
 
@@ -86,11 +99,11 @@ Share::currentPage('Page Title')
 
 ### Fontawesome
 
-You can change the default Fontawesome icon you want to use in:
+You can change the default Fontawesome icon you want to use in the config file:
 
  ```config/social-media-links.php```
 
-Laravel Social media links supports Font Awesome v5,
+Laravel Social media links uses Font Awesome v5 by default but you can replace it to any version you like,
 
 
 #### Add extra classes to the social media links
@@ -154,6 +167,14 @@ You can specify the page you which to share manually using the `page` function
 
 ```php
 Share::page('https://example.com/your-page')->toFacebook();
+```
+
+#### Customizing the soource assets
+
+If needed you can publish the package uncompiled js and sass files using the following tag:
+
+```bash
+php artisan vendor:publish --tag=codedor-social-media-links-uncompiled
 ```
 
 ## Changelog

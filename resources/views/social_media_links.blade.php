@@ -6,5 +6,5 @@ Share::currentPage($title)
 !!}
 
 @section('scripts')
-<script src="{{ mix('js/social-media-links.js') }}"></script>
+<script src="{{ asset('vendor/social-media-links/js/social-media-links.js') }}"></script>
 @endsection

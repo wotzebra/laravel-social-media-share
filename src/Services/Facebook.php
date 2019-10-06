@@ -2,6 +2,9 @@
 
 namespace Codedor\SocialMediaLinks\Services;
 
+use Codedor\SocialMediaLinks\Services\AbstractService;
+use Illuminate\Support\Facades\Config;
+
 /**
  * Class Facebook
  *
@@ -10,7 +13,7 @@ namespace Codedor\SocialMediaLinks\Services;
  * @since   2019-10-02
  */
 
-class Facebook extends \Codedor\SocialMediaLinks\Share
+class Facebook extends AbstractService
 {
 
     /** @var string */
@@ -20,20 +23,14 @@ class Facebook extends \Codedor\SocialMediaLinks\Share
 
     public function __construct()
     {
-        $this->icon = config('social-media-links.services.facebook.icon');
+        $this->icon = Config::get('social-media-links.services.facebook.icon');
     }
 
-    public function toFacebook()
+    public function buildUrl(string $url, string $title)
     {
+        $link = $this->buildLink($this->base . $url, $this->icon);
 
-        $this->buildLink($this->getFacebookUrl(), $this->icon);
-
-        return $this;
-    }
-
-    public function getFacebookUrl(): string
-    {
-        return $this->base . $this->url;
+        return $link;
     }
 
 }

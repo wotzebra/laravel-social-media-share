@@ -2,8 +2,6 @@
 
 namespace Codedor\SocialMediaLinks;
 
-use Illuminate\Support\HtmlString;
-
 /**
  * Class Share
  *
@@ -21,29 +19,11 @@ class Share
     /** @var array */
     protected $options = [];
     /** @var string */
-    protected $iconPrefix = 'fab fa-lg ';
-    /** @var string */
-    protected $classPrefix = 'js-social-media-link ';
-    /** @var string */
-    protected $prefix = '<div id="js-social-media"><ul class="social-media-links">';
+    protected $prefix = '<div id="js-social-media-links"><ul class="social-media-links">';
     /** @var string */
     protected $suffix = '</ul></div>';
     /** @var string */
     protected $html = '';
-
-    /**
-     * Return a string with html at the end
-     * of the chain.
-     *
-     * @return string
-     */
-    public function __toString(): string
-    {
-        $this->html = $this->prefix . $this->html;
-        $this->html .= $this->suffix;
-
-        return $this->html;
-    }
 
     /**
      * @param string $title
@@ -87,30 +67,47 @@ class Share
         return $this;
     }
 
-    /**
-     * Build a single link
-     *
-     * @param $provider
-     * @param string $url
-     */
-    public function buildLink(string $url, string $icon): HtmlString
+    public function toFacebook()
     {
+        $entity = new Services\Facebook();
 
-        $class = $this->classPrefix .
-            key_exists('class', $this->options) ? $this->options['class'] : '';
+        $this->html .=  $entity->buildUrl($this->url, $this->title);
 
-        $icon = $this->iconPrefix . $icon;
-
-        return new HtmlString(
-            view('vendor.social_media_link',
-                compact(
-                    'url',
-                    'class',
-                    'icon'
-                )
-            )
-        );
+        return $this;
     }
+
+    public function toLinkedin($summary)
+    {
+        $entity = new Services\Linkedin($summary);
+
+        $this->html .=  $entity->buildUrl($this->url, $this->title);
+
+        return $this;
+    }
+
+    public function toTwitter()
+    {
+        $entity = new Services\Twitter();
+
+        $this->html .=  $entity->buildUrl($this->url, $this->title);
+
+        return $this;
+    }
+
+    /**
+     * Return a string with html at the end
+     * of the chain.
+     *
+     * @return string
+     */
+    public function __toString(): string
+    {
+        $this->html = $this->prefix . $this->html;
+        $this->html .= $this->suffix;
+
+        return $this->html;
+    }
+
 
     /**
      * Optionally Set custom prefix and/or suffix
@@ -118,7 +115,7 @@ class Share
      * @param string $prefix
      * @param string $suffix
      */
-    protected function setPrefixAndSuffix(string $prefix, string $suffix)
+    protected function setPrefixAndSuffix($prefix, $suffix): void
     {
         if (!is_null($prefix)) {
             $this->prefix = $prefix;

@@ -7,31 +7,33 @@ return [
     |--------------------------------------------------------------------------
     |
     | Specify icons and settings you would like you use.
+    | By default we use FontAwesome 5 + squared icons but you could just as
+    | easily replace it to FontAwesome 4 or another variant of the icon
     |
     */
     'services' => [
         'facebook' => [
-            'icon' => 'fa-facebook-square',
+            'icon' => 'fab fa-lg fa-facebook-square',
         ],
         'twitter' => [
-            'icon' => 'fa-twitter-square',
+            'icon' => 'fab fa-lg fa-twitter-square',
         ],
         'linkedin' => [
-            'icon' => 'fa-linkedin',
+            'icon' => 'fab fa-lg fa-linkedin',
             'extra' => ['mini' => 'true'],
         ],
         'whatsapp' => [
-            'icon' => 'fa-whatsapp-square',
+            'icon' => 'fab fa-lg fa-whatsapp-square',
             'extra' => ['mini' => 'true'],
         ],
         'pinterest' => [
-            'icon' => 'fa-pinterest-square',
+            'icon' => 'fab fa-lg fa-pinterest-square',
         ],
         'reddit' => [
-            'icon' => 'fa-reddit-square',
+            'icon' => 'fab fa-lg fa-reddit-square',
         ],
         'telegram' => [
-            'icon' => 'telegram-plane',
+            'icon' => 'fab fa-lg telegram-plane',
         ],
     ],
 ];

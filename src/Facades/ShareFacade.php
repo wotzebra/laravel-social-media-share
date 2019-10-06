@@ -11,8 +11,11 @@ use Illuminate\Support\Facades\Facade;
  * @author  Sofian Mourabit <sofian@codedor.be>
  * @since   2019-10-02
  *
- * @method static string fallbackLocale()
- * @method static void addRoutePart(string $part)
+ * @method static __call()
+ * @method static __toString()
+ * @method static buildLink()
+ * @method static page(string $url, string $title = null, $options = [],$prefix = null, $suffix = null)
+ * @method static currentPage(string $title = null, $options = [],$prefix = null, $suffix = null)
  * @method static toFacebook()
  * @method static toTwitter()
  * @method static toLinkedin(string $summary)

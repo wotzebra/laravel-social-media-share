@@ -3,7 +3,7 @@
 namespace Codedor\SocialMediaLinks\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use codedor\SocialMediaLinks\Share;
+use Codedor\SocialMediaLinks\Share;
 
 class SocialMediaLinksServiceProvider extends ServiceProvider
 {
@@ -12,6 +12,9 @@ class SocialMediaLinksServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'share');
+
         $this->registerPublishing();
     }
 
@@ -21,6 +24,7 @@ class SocialMediaLinksServiceProvider extends ServiceProvider
     protected function registerPublishing()
     {
         if ($this->app->runningInConsole()) {
+
             $this->publishes(
                 [
                     __DIR__ . '/../../config/social-media-links.php' =>
@@ -37,6 +41,18 @@ class SocialMediaLinksServiceProvider extends ServiceProvider
                 ],
                 ['social-media-links', 'codedor-social-media-links']
             );
+
+            $this->publishes(
+                [
+
+                    __DIR__ . '/../../resources/sass' =>
+                        resource_path('/vendor/social-media-links/css'),
+
+                    __DIR__ . '/../../resources/js' =>
+                        resource_path('/vendor/social-media-links/js'),
+                ],
+                'codedor-social-media-links-uncompiled'
+            );
         }
     }
 
@@ -46,14 +62,13 @@ class SocialMediaLinksServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(Share::class, function ($app) {
-            return new Share;
-        });
-        $this->app->alias(Share::class, 'share');
-
         $this->mergeConfigFrom(
             __DIR__ . '/../../config/social-media-links.php',
             'social-media-links'
         );
+        $this->app->singleton(Share::class, function ($app) {
+            return new Share;
+        });
+        $this->app->alias(Share::class, 'share');
     }
 }
