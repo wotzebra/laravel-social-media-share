@@ -5,7 +5,7 @@ Share::currentPage($title)
 ->toTwitter()
 !!}
 
-@push('css')
+@push('head')
     <link href="{{ asset('vendor/social-media-links/css/social-media-links.css') }}" 
     rel="stylesheet" 
     media="screen" 

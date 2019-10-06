@@ -31,7 +31,7 @@ Add the following line to any blade temaplte where you want the social media lin
 To pull in the CSS add this line to pull in to the bottom of your HEAD tag in your default layout
 
 ```blade
-@stack('css')
+@stack('head')
 ```
 
 To pull in the javascript add this line right before the  closing BODY tag in your default layout
