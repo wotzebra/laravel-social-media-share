@@ -19,6 +19,7 @@ let sharingWrapper = document.querySelector('#js-social-media-links')
 sharingWrapper.addEventListener('click', openPopup, false)
 
 function openPopup (event) {
+  event.preventDefault()
   if (windowObjectReference == null || windowObjectReference.closed) {
 
     if (event.target.parentNode.classList.contains('js-social-media-link')) {
@@ -40,6 +41,5 @@ function openPopup (event) {
 
   } else {
     windowObjectReference.focus()
-    event.preventDefault()
   }
 };
