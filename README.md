@@ -9,7 +9,7 @@ This package is heavily inspired by the jorenvanhocht/laravel-share package.
 
 You can install the package via composer:
 
-``` bash
+```bash
 composer require codedor/laravel-social-media-links
 ```
 
@@ -191,7 +191,7 @@ And update the **resources/views/vendor/social_media_links.blade.php**
     rel="stylesheet" 
     media="screen" 
     type="text/css">
-    
+
 <script src="{{ mix('js/social-media-links.js') }}"></script>
 ```
 
