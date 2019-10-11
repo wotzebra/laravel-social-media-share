@@ -13,7 +13,14 @@ class SocialMediaLinksServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'share');
+        $this->loadViewsFrom(
+            __DIR__.'/../../resources/views',
+            'share'
+        );
+        $this->mergeConfigFrom(
+            __DIR__ . '/../../config/social-media-links.php',
+            'social-media-links'
+        );
 
         $this->registerPublishing();
     }
@@ -62,10 +69,6 @@ class SocialMediaLinksServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(
-            __DIR__ . '/../../config/social-media-links.php',
-            'social-media-links'
-        );
         $this->app->singleton(Share::class, function ($app) {
             return new Share;
         });
