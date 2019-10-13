@@ -2,6 +2,8 @@
 
 namespace Codedor\SocialMediaLinks\Tests\Feature;
 
+use Codedor\SocialMediaLinks\Facades\Share;
+
 class GenerateMultipleSocialMediaLinksTest extends TestCase
 {
 
@@ -10,7 +12,7 @@ class GenerateMultipleSocialMediaLinksTest extends TestCase
      */
     public function generateMultipleSocialMediaLinks()
     {
-        $result = ShareFacade::currentPage('pageTitle')
+        $result = Share::currentPage('pageTitle')
             ->facebook()
             ->twitter()
             ->linkedin('pageSummary');
