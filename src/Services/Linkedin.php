@@ -46,4 +46,14 @@ class Linkedin extends AbstractService
         return $link;
     }
 
+    public function getUrl(string $url, string $title)
+    {
+        $baseUrl = $this->base .
+            'mini=' . $this->mini .
+            '&title=' . urlencode($title) .
+            '&summary=' . urlencode($this->summary) .
+            '&url=' . $url;
+        return $baseUrl;
+    }
+
 }

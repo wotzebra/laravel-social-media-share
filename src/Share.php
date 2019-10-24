@@ -179,6 +179,21 @@ class Share
         return $this->html;
     }
 
+    public function getSpecificUrl($service)
+    {
+        $entity = null;
+        if ($service === 'facebook') {
+            $entity = new Services\Facebook();
+        } else if ($service === 'twitter') {
+            $entity = new Services\Twitter();
+        } else if ($service === 'linkedin') {
+            $entity = new Services\Linkedin($this->title);
+        }
+
+        $link = $entity->getUrl($this->url, $this->title);
+
+        return $link;
+    }
 
     /**
      * Optionally Set custom prefix and/or suffix

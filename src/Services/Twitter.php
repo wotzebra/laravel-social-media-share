@@ -36,4 +36,13 @@ class Twitter extends AbstractService
 
         return $link;
     }
+
+    public function getUrl(string $url, string $title)
+    {
+        $baseUrl = $this->base .
+            'text=' . urlencode($title) .
+            '&url=' . $url;
+
+        return $baseUrl;
+    }
 }
