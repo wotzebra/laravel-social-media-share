@@ -29,7 +29,7 @@ class Linkedin extends AbstractService
     {
         $this->summary = $summary;
 
-        $this->mini = Config::get('social-media-links.services.linkedin.mini');
+        $this->mini = Config::get('social-media-links.services.linkedin.extra')['mini'];
         $this->icon = Config::get('social-media-links.services.linkedin.icon');
     }
 
@@ -46,7 +46,7 @@ class Linkedin extends AbstractService
         return $link;
     }
 
-    public function getUrl(string $url, string $title)
+    public function getUTMUrl(string $url, string $title)
     {
         $baseUrl = $this->base .
             'mini=' . $this->mini .

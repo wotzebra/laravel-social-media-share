@@ -182,15 +182,15 @@ class Share
     public function getSpecificUrl($service)
     {
         $entity = null;
-        if ($service === 'facebook') {
+        if ($service === 'Facebook') {
             $entity = new Services\Facebook();
-        } else if ($service === 'twitter') {
+        } else if ($service === 'Twitter') {
             $entity = new Services\Twitter();
-        } else if ($service === 'linkedin') {
+        } else if ($service === 'LinkedIn') {
             $entity = new Services\Linkedin($this->title);
         }
 
-        $link = $entity->getUrl($this->url, $this->title);
+        $link = $entity->getUTMUrl($this->url, $this->title);
 
         return $link;
     }

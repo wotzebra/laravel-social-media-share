@@ -33,7 +33,7 @@ class Facebook extends AbstractService
         return $link;
     }
 
-    public function getUrl(string $url, string $title)
+    public function getUTMUrl(string $url, string $title)
     {
         return $this->base . $url;
     }
