@@ -58,6 +58,7 @@ class Share
         $prefix = null,
         $suffix = null
     ) {
+        $this->html = '';
         $this->url = $url;
         $this->title = $title;
         $this->options = $options;
