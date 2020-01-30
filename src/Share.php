@@ -152,7 +152,7 @@ class Share
         return $this;
     }
 
-     /**
+    /**
      * Pinterest share link
      *
      * @return $this
@@ -160,6 +160,20 @@ class Share
     public function toPinterest()
     {
         $entity = new Services\Pinterest();
+
+        $this->html .=  $entity->buildUrl($this->url, $this->title);
+
+        return $this;
+    }
+
+    /**
+     * Mail share link
+     *
+     * @return $this
+     */
+    public function toMail()
+    {
+        $entity = new Services\Mail();
 
         $this->html .=  $entity->buildUrl($this->url, $this->title);
 
