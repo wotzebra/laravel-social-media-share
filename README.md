@@ -22,7 +22,14 @@ php artisan vendor:publish --tag=codedor-social-media-links
 ## Usage
 
 Add the following line to any blade temaplte where you want the social media links to appear.
+```blade
+@include('components.share', [
+            'title' => $model->title,
+            'summary' => $model->intro;
+])
+```
 
+OR
 ```blade
 @include('vendor.social-media-links.social_media_links', ['title' => $model->title, 'linkedinSummary' => $model->intro ])
 
@@ -93,7 +100,8 @@ Share::currentPage('Page Title')
     ->toWhatsapp()
     ->toReddit()
     ->toTelegram()
-    ->toPinterest();
+    ->toPinterest()
+    ->toMail();
 ```
 
 ## Options
@@ -188,8 +196,8 @@ However this requires you to add the following lines to your webpack.mix.js file
 And update the asset links in **resources/views/vendor/social_media_links.blade.php** to:
 ```html
  <link href="{{ mix('css/social-media-links.css') }}"
-    rel="stylesheet" 
-    media="screen" 
+    rel="stylesheet"
+    media="screen"
     type="text/css">
 
 <script src="{{ mix('js/social-media-links.js') }}"></script>
