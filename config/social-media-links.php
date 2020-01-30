@@ -32,7 +32,10 @@ return [
             'icon' => 'fab fa-lg fa-reddit-square',
         ],
         'telegram' => [
-            'icon' => 'fab fa-lg telegram-plane',
+            'icon' => 'fab fa-lg fa-telegram-plane',
+        ],
+        'mail' => [
+            'icon' => 'far fa-lg fa-envelope-open-text',
         ],
     ],
 ];
