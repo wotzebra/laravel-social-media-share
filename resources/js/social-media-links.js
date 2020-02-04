@@ -9,7 +9,7 @@
  */
 
 'use strict'
-let windowObjectReference = null 
+let windowObjectReference = null
 const popupSize = {
   width: 780,
   height: 550
@@ -19,26 +19,28 @@ let sharingWrapper = document.querySelector('#js-social-media-links')
 sharingWrapper.addEventListener('click', openPopup, false)
 
 function openPopup (event) {
-  event.preventDefault()
   if (windowObjectReference == null || windowObjectReference.closed) {
-
     if (event.target.parentNode.classList.contains('js-social-media-link')) {
+      const href = event.target.parentNode.getAttribute('href')
 
-      const verticalPos = Math.floor((window.innerWidth - popupSize.width) / 2)
-      const horisontalPos = Math.floor((window.innerHeight - popupSize.height) / 2)
+      if (href.startsWith('http')) {
+        event.preventDefault()
 
-      const windowName = 'Social Sharing'
-      const windowOptions = 'width=' + popupSize.width + ',height=' + popupSize.height +
-                  ',left=' + verticalPos + ',top=' + horisontalPos +
-                  ',scrollbars=1,resizable=1'
+        const verticalPos = Math.floor((window.innerWidth - popupSize.width) / 2)
+        const horisontalPos = Math.floor((window.innerHeight - popupSize.height) / 2)
 
-      windowObjectReference = window.open(
-        event.target.parentNode.getAttribute('href'),
-        windowName,
-        windowOptions
-      )
+        const windowName = 'Social Sharing'
+        const windowOptions = 'width=' + popupSize.width + ',height=' + popupSize.height +
+                    ',left=' + verticalPos + ',top=' + horisontalPos +
+                    ',scrollbars=1,resizable=1'
+
+        windowObjectReference = window.open(
+          href,
+          windowName,
+          windowOptions
+        )
+      }
     }
-
   } else {
     windowObjectReference.focus()
   }
