@@ -60,6 +60,8 @@ class SocialMediaLinksServiceProvider extends ServiceProvider
                 ],
                 'codedor-social-media-links-uncompiled'
             );
+
+            $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'social-media-links');
         }
     }
 

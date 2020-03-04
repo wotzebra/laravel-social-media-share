@@ -25,7 +25,7 @@ abstract class AbstractService
 
         return new HtmlString(
             view(
-                'vendor.social-media-links.components.social_media_link',
+                'social-media-links::components.social_media_link',
                 compact(
                     'url',
                     'class',
