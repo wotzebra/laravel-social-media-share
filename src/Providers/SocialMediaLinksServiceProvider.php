@@ -15,7 +15,7 @@ class SocialMediaLinksServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(
             __DIR__.'/../../resources/views',
-            'share'
+            'social-media-links'
         );
         $this->mergeConfigFrom(
             __DIR__ . '/../../config/social-media-links.php',
