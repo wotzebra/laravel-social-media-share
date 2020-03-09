@@ -11,7 +11,6 @@ abstract class AbstractService
     /** @var string */
     protected $linkPrefix = 'js-social-media-link ';
 
-
     /**
      * Build a single link
      *
@@ -23,16 +22,24 @@ abstract class AbstractService
         $class = $this->linkPrefix;
         $class .= key_exists('class', $this->options) ? $this->options['class'] : '';
 
+        $className = $this->getClassName();
+
         return new HtmlString(
             view(
                 'vendor.social-media-links.components.social_media_link',
                 compact(
                     'url',
                     'class',
-                    'icon'
+                    'icon',
+                    'className'
                 )
             )->render()
         );
+    }
+
+    public function getClassName()
+    {
+        return class_basename(static::class);
     }
 
     abstract public function buildUrl(string $url, string $title);
