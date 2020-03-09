@@ -2,6 +2,10 @@
 
 All Notable changes to `laravel-social-media-link` will be documented in this file
 
+## 1.0.5 - 2020-03-09
+
+- Added built in gtag tracking to share links
+
 ## 1.0.4 - 2020-02-04
 
 - Do not open popup for mailto links
