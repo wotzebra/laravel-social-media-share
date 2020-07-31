@@ -9,3 +9,9 @@
         <i class="{{ $icon }}"></i>
     </a>
 </li>
+
+@if($js)
+    @push('scripts')
+        {!! $js !!}
+    @endpush
+@endif
