@@ -208,7 +208,7 @@ And update the asset links in **resources/views/vendor/social_media_links.blade.
 To upgrade from 1.x simply republish the config file using the following command:
 
 ```bash
-php artisan vendor:publish --tag=codedor-social-media-links-config
+php artisan vendor:publish --tag=codedor-social-media-links-config --force
 ```
 
 Note that if you made changes made to the config file, for example changed a sharing icon you will need to change this again.
