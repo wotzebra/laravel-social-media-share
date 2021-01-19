@@ -17,7 +17,7 @@ class Whatsapp extends AbstractService
 {
 
     /** @var string */
-    protected $base = 'https://wa.me/?text=';
+    protected $base = Config::get('social-media-links.services.whatsapp.base_url');
     /** @var string */
     protected $icon;
 

@@ -17,7 +17,7 @@ class Twitter extends AbstractService
 {
 
     /** @var string */
-    protected $base = 'https://twitter.com/intent/tweet?';
+    protected $base = Config::get('social-media-links.services.twitter.base_url');
     /** @var string */
     protected $icon;
 

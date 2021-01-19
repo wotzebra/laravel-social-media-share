@@ -17,7 +17,7 @@ class Telegram extends AbstractService
 {
 
     /** @var string */
-    protected $base = 'https://telegram.me/share/url?';
+    protected $base = Config::get('social-media-links.services.telegram.base_url');
     /** @var string */
     protected $icon;
 

@@ -17,7 +17,7 @@ class Reddit extends AbstractService
 {
 
     /** @var string */
-    protected $base = 'https://www.reddit.com/submit?';
+    protected $base = Config::get('social-media-links.services.reddit.base_url');
     /** @var string */
     protected $icon;
 

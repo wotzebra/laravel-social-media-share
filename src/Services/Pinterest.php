@@ -17,7 +17,7 @@ class Pinterest extends AbstractService
 {
 
     /** @var string */
-    protected $base = 'https://pinterest.com/pin/create/button/?url=';
+    protected $base = Config::get('social-media-links.services.pinterest.base_url');
     /** @var string */
     protected $icon;
 

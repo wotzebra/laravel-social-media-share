@@ -17,7 +17,7 @@ class Facebook extends AbstractService
 {
 
     /** @var string */
-    protected $base = 'https://www.facebook.com/sharer/sharer.php?u=';
+    protected $base = Config::get('social-media-links.services.facebook.base_url');
     /** @var string */
     protected $icon;
 

@@ -17,7 +17,7 @@ class Linkedin extends AbstractService
 {
 
     /** @var string */
-    protected $base = 'http://www.linkedin.com/shareArticle?';
+    protected $base = Config::get('social-media-links.services.linkedin.base_url');
     /** @var string */
     protected $icon;
     /** @var string */
