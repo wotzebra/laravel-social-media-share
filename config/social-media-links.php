@@ -44,5 +44,8 @@ return [
         'mail' => [
             'icon' => 'far fa-lg fa-envelope-open-text',
         ],
+        'clipboard' => [
+            'icon' => 'far fa-lg fa-copy'
+        ]
     ],
 ];
