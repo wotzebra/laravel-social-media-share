@@ -17,7 +17,7 @@ class Linkedin extends AbstractService
 {
 
     /** @var string */
-    protected $base = Config::get('social-media-links.services.linkedin.base_url');
+    protected $base;
     /** @var string */
     protected $icon;
     /** @var string */
@@ -31,6 +31,7 @@ class Linkedin extends AbstractService
 
         $this->mini = Config::get('social-media-links.services.linkedin.extra')['mini'];
         $this->icon = Config::get('social-media-links.services.linkedin.icon');
+        $this->base = Config::get('social-media-links.services.linkedin.base_url');
     }
 
     public function buildUrl(string $url, string $title)
@@ -39,6 +40,7 @@ class Linkedin extends AbstractService
         'mini=' . $this->mini .
         '&title=' . urlencode($title) .
         '&summary=' . urlencode($this->summary) .
+        '&shareCommentary=' . urlencode($this->summary) .
         '&url=' . $url;
 
         $link = $this->buildLink($baseUrl, $this->icon);

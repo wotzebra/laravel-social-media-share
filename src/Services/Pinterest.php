@@ -17,13 +17,14 @@ class Pinterest extends AbstractService
 {
 
     /** @var string */
-    protected $base = Config::get('social-media-links.services.pinterest.base_url');
+    protected $base;
     /** @var string */
     protected $icon;
 
     public function __construct()
     {
         $this->icon = Config::get('social-media-links.services.pinterest.icon');
+        $this->base = Config::get('social-media-links.services.pinterest.base_url');
     }
 
     public function buildUrl(string $url, string $title)
