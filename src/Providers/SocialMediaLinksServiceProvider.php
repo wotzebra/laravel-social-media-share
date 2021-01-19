@@ -60,6 +60,14 @@ class SocialMediaLinksServiceProvider extends ServiceProvider
                 ],
                 'codedor-social-media-links-uncompiled'
             );
+
+            $this->publishes(
+                [
+                    __DIR__ . '/../../config/social-media-links.php' =>
+                        config_path('social-media-links.php'),
+                ],
+                ['codedor-social-media-links-config']
+            );
         }
     }
 
