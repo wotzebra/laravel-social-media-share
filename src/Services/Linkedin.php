@@ -17,7 +17,7 @@ class Linkedin extends AbstractService
 {
 
     /** @var string */
-    protected $base = 'http://www.linkedin.com/shareArticle?';
+    protected $base;
     /** @var string */
     protected $icon;
     /** @var string */
@@ -31,6 +31,7 @@ class Linkedin extends AbstractService
 
         $this->mini = Config::get('social-media-links.services.linkedin.extra')['mini'];
         $this->icon = Config::get('social-media-links.services.linkedin.icon');
+        $this->base = Config::get('social-media-links.services.linkedin.base_url');
     }
 
     public function buildUrl(string $url, string $title)

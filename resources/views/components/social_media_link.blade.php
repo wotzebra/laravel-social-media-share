@@ -9,3 +9,9 @@
         <i class="{{ $icon }}"></i>
     </a>
 </li>
+
+@if($js)
+    @push('social-media-link-scripts')
+        {!! $js !!}
+    @endpush
+@endif

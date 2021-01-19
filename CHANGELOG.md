@@ -2,6 +2,12 @@
 
 All Notable changes to `laravel-social-media-link` will be documented in this file
 
+## 2.0.0 - 2021-01-20
+
+- Added configurable url for all sharing services.
+- Merged copy to clipboard service.
+- Added upgrade instructions to Readme
+
 ## 1.0.5 - 2020-03-09
 
 - Added built in gtag tracking to share links

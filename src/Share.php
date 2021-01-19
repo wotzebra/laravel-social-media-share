@@ -68,7 +68,7 @@ class Share
         return $this;
     }
 
-     /**
+    /**
      * Facebook share link
      *
      * @return $this
@@ -82,7 +82,7 @@ class Share
         return $this;
     }
 
-     /**
+    /**
      * Linkedin share link
      *
      * @return $this
@@ -96,7 +96,7 @@ class Share
         return $this;
     }
 
-     /**
+    /**
      * Twitter share link
      *
      * @return $this
@@ -110,7 +110,7 @@ class Share
         return $this;
     }
 
-     /**
+    /**
      * Whatsapp share link
      *
      * @return $this
@@ -124,7 +124,7 @@ class Share
         return $this;
     }
 
-     /**
+    /**
      * Telegram share link
      *
      * @return $this
@@ -138,7 +138,7 @@ class Share
         return $this;
     }
 
-     /**
+    /**
      * Telegram share link
      *
      * @return $this
@@ -174,6 +174,20 @@ class Share
     public function toMail()
     {
         $entity = new Services\Mail();
+
+        $this->html .=  $entity->buildUrl($this->url, $this->title);
+
+        return $this;
+    }
+
+    /**
+     * Clipboard Copy
+     *
+     * @return $this
+     */
+    public function toClipboard()
+    {
+        $entity = new Services\Clipboard();
 
         $this->html .=  $entity->buildUrl($this->url, $this->title);
 

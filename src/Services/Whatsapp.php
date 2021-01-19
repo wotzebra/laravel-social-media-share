@@ -17,13 +17,14 @@ class Whatsapp extends AbstractService
 {
 
     /** @var string */
-    protected $base = 'https://wa.me/?text=';
+    protected $base;
     /** @var string */
     protected $icon;
 
     public function __construct()
     {
         $this->icon = Config::get('social-media-links.services.whatsapp.icon');
+        $this->base = Config::get('social-media-links.services.whatsapp.base_url');
     }
 
     public function buildUrl(string $url, string $title)

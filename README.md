@@ -101,7 +101,8 @@ Share::currentPage('Page Title')
     ->toReddit()
     ->toTelegram()
     ->toPinterest()
-    ->toMail();
+    ->toMail()
+    ->toClipboard();
 ```
 
 ## Options
@@ -202,6 +203,15 @@ And update the asset links in **resources/views/vendor/social_media_links.blade.
 
 <script src="{{ mix('js/social-media-links.js') }}"></script>
 ```
+## Upgrading from 1.0.x to 2.0.x
+
+To upgrade from 1.x simply republish the config file using the following command:
+
+```bash
+php artisan vendor:publish --tag=codedor-social-media-links-config --force
+```
+
+Note that if you made changes made to the config file, for example changed a sharing icon you will need to change this again.
 
 ## Changelog
 

@@ -17,13 +17,14 @@ class Reddit extends AbstractService
 {
 
     /** @var string */
-    protected $base = 'https://www.reddit.com/submit?';
+    protected $base;
     /** @var string */
     protected $icon;
 
     public function __construct()
     {
         $this->icon = Config::get('social-media-links.services.reddit.icon');
+        $this->base = Config::get('social-media-links.services.reddit.base_url');
     }
 
     public function buildUrl(string $url, string $title)
