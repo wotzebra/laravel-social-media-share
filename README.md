@@ -25,7 +25,7 @@ Add the following line to any blade temaplte where you want the social media lin
 ```blade
 @include('components.share', [
             'title' => $model->title,
-            'summary' => $model->intro;
+            'summary' => $model->intro
 ])
 ```
 
