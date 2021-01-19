@@ -40,7 +40,6 @@ class Linkedin extends AbstractService
         'mini=' . $this->mini .
         '&title=' . urlencode($title) .
         '&summary=' . urlencode($this->summary) .
-        '&shareCommentary=' . urlencode($this->summary) .
         '&url=' . $url;
 
         $link = $this->buildLink($baseUrl, $this->icon);
