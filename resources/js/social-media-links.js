@@ -47,14 +47,17 @@ function openPopup (event) {
 };
 
 document.querySelector('a.clipboard').addEventListener('click', async event => {
+  event.preventDefault()
   var a = event.target.parentElement
-  console.log(a)
-  /* if (!a.href) {
-      return
-  }
+  var input = document.body.appendChild(document.createElement("input"));
+
   try {
-    await navigator.clipboard.writeText(a.href)
-  } catch (err) {
+    input.value = a.href;
+    input.select();
+    document.execCommand('copy');
+  } catch (error) {
     console.error('Failed to copy!', err)
-  } */
+  }
+
+  input.parentNode.removeChild(input);
 })
