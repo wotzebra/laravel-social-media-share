@@ -45,3 +45,16 @@ function openPopup (event) {
     windowObjectReference.focus()
   }
 };
+
+document.querySelector('a.clipboard').addEventListener('click', async event => {
+  var a = event.target.parentElement
+  console.log(a)
+  /* if (!a.href) {
+      return
+  }
+  try {
+    await navigator.clipboard.writeText(a.href)
+  } catch (err) {
+    console.error('Failed to copy!', err)
+  } */
+})
