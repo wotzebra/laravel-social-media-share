@@ -49,6 +49,11 @@ function openPopup (event) {
 document.querySelector('a.clipboard').addEventListener('click', async event => {
   event.preventDefault()
   var a = event.target.parentElement
+
+  if (!a.href) {
+    return;
+  }
+
   var input = document.body.appendChild(document.createElement("input"));
 
   try {
