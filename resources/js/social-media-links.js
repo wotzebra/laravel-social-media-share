@@ -45,3 +45,24 @@ function openPopup (event) {
     windowObjectReference.focus()
   }
 };
+
+document.querySelector('a.clipboard').addEventListener('click', async event => {
+  event.preventDefault()
+  var a = event.target.parentElement
+
+  if (!a.href) {
+    return;
+  }
+
+  var input = document.body.appendChild(document.createElement("input"));
+
+  try {
+    input.value = a.href;
+    input.select();
+    document.execCommand('copy');
+  } catch (error) {
+    console.error('Failed to copy!', err)
+  }
+
+  input.parentNode.removeChild(input);
+})

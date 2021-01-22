@@ -18,27 +18,6 @@ class Clipboard extends AbstractService
 
     public function buildUrl(string $url, string $title)
     {
-        $link = '#';
-
-        $js = <<<JS
-        <script>
-        document.querySelector('a.clipboard').addEventListener('click', async event => {
-            if (!navigator.clipboard) {
-              return
-            }
-            var a = event.target.parentElement
-            if (!a.href) {
-                return
-            }
-            try {
-              await navigator.clipboard.writeText(a.href)
-            } catch (err) {
-              console.error('Failed to copy!', err)
-            }
-          })
-          </script>
-        JS;
-
-        return $this->buildLink($link, $this->icon, $js);
+        return $this->buildLink('', $this->icon);
     }
 }
