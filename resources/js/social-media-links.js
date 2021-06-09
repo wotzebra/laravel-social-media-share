@@ -46,23 +46,27 @@ function openPopup (event) {
   }
 };
 
-document.querySelector('a.clipboard').addEventListener('click', async event => {
-  event.preventDefault()
-  var a = event.target.parentElement
+var $clipboardLink = document.querySelector('a.clipboard');
 
-  if (!a.href) {
-    return;
-  }
+if ($clipboardLink) {
+  $clipboardLink.addEventListener('click', async event => {
+    event.preventDefault()
+    var a = event.target.parentElement
 
-  var input = document.body.appendChild(document.createElement("input"));
+    if (!a.href) {
+      return;
+    }
 
-  try {
-    input.value = a.href;
-    input.select();
-    document.execCommand('copy');
-  } catch (error) {
-    console.error('Failed to copy!', err)
-  }
+    var input = document.body.appendChild(document.createElement("input"));
 
-  input.parentNode.removeChild(input);
-})
+    try {
+      input.value = a.href;
+      input.select();
+      document.execCommand('copy');
+    } catch (error) {
+      console.error('Failed to copy!', err)
+    }
+
+    input.parentNode.removeChild(input);
+  })
+}

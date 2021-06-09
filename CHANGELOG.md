@@ -4,6 +4,9 @@ All Notable changes to `laravel-social-media-link` will be documented in this fi
 
 ## [Unreleased]
 
+## [2.0.2] - 2021-06-09
+### Changed
+- Add check for clipboard dom element so console doesn't throw error
 ## [2.0.1] - 2021-01-22
 ### Changed
 - Rewrote the js for the clipboard functionality so it will be transpiled for older browsers.
