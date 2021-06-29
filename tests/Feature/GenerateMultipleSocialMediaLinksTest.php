@@ -3,19 +3,20 @@
 namespace Codedor\SocialMediaLinks\Tests\Feature;
 
 use Codedor\SocialMediaLinks\Facades\Share;
+use Codedor\SocialMediaLinks\Tests\TestCase;
 
 class GenerateMultipleSocialMediaLinksTest extends TestCase
 {
-
      /**
      * @test
      */
     public function generateMultipleSocialMediaLinks()
     {
-        $result = Share::currentPage('pageTitle')
-            ->facebook()
-            ->twitter()
-            ->linkedin('pageSummary');
+        $result = (string) Share::currentPage('pageTitle')
+            ->toFacebook()
+            ->toTwitter()
+            ->toLinkedin('pageSummary');
+
         $expected = '<div id="js-social-media" class="social-media">
                         <ul class="social-media-links">
                             <li>
@@ -35,6 +36,7 @@ class GenerateMultipleSocialMediaLinksTest extends TestCase
                             </li>
                         </ul>
                     </div>';
+
         $this->assertEquals($expected, $result);
     }
 
