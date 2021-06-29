@@ -39,7 +39,6 @@ class Share
         string $suffix = null
     ) {
         $url = request()->getUri();
-
         return $this->page($url, $title, $options, $prefix, $suffix);
     }
 
@@ -75,7 +74,7 @@ class Share
      */
     public function toFacebook()
     {
-        $entity = new Services\Facebook();
+        $entity = new Services\Facebook($this->options);
 
         $this->html .=  $entity->buildUrl($this->url, $this->title);
 
@@ -89,7 +88,7 @@ class Share
      */
     public function toLinkedin($summary)
     {
-        $entity = new Services\Linkedin($summary);
+        $entity = new Services\Linkedin($summary, $this->options);
 
         $this->html .=  $entity->buildUrl($this->url, $this->title);
 
@@ -103,7 +102,7 @@ class Share
      */
     public function toTwitter()
     {
-        $entity = new Services\Twitter();
+        $entity = new Services\Twitter($this->options);
 
         $this->html .=  $entity->buildUrl($this->url, $this->title);
 
@@ -117,7 +116,7 @@ class Share
      */
     public function toWhatsapp()
     {
-        $entity = new Services\Whatsapp();
+        $entity = new Services\Whatsapp($this->options);
 
         $this->html .=  $entity->buildUrl($this->url, $this->title);
 
@@ -131,7 +130,7 @@ class Share
      */
     public function toTelegram()
     {
-        $entity = new Services\Telegram();
+        $entity = new Services\Telegram($this->options);
 
         $this->html .=  $entity->buildUrl($this->url, $this->title);
 
@@ -145,7 +144,7 @@ class Share
      */
     public function toReddit()
     {
-        $entity = new Services\Reddit();
+        $entity = new Services\Reddit($this->options);
 
         $this->html .=  $entity->buildUrl($this->url, $this->title);
 
@@ -159,7 +158,7 @@ class Share
      */
     public function toPinterest()
     {
-        $entity = new Services\Pinterest();
+        $entity = new Services\Pinterest($this->options);
 
         $this->html .=  $entity->buildUrl($this->url, $this->title);
 
@@ -173,7 +172,7 @@ class Share
      */
     public function toMail()
     {
-        $entity = new Services\Mail();
+        $entity = new Services\Mail($this->options);
 
         $this->html .=  $entity->buildUrl($this->url, $this->title);
 
@@ -187,7 +186,7 @@ class Share
      */
     public function toClipboard()
     {
-        $entity = new Services\Clipboard();
+        $entity = new Services\Clipboard($this->options);
 
         $this->html .=  $entity->buildUrl($this->url, $this->title);
 
@@ -212,11 +211,11 @@ class Share
     {
         $entity = null;
         if ($service === 'Facebook') {
-            $entity = new Services\Facebook();
+            $entity = new Services\Facebook($this->options);
         } else if ($service === 'Twitter') {
-            $entity = new Services\Twitter();
+            $entity = new Services\Twitter($this->options);
         } else if ($service === 'LinkedIn') {
-            $entity = new Services\Linkedin($this->title);
+            $entity = new Services\Linkedin($this->title, $this->options);
         }
 
         $link = $entity->getUTMUrl($this->url, $this->title);

@@ -4,6 +4,7 @@ namespace Codedor\SocialMediaLinks\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Codedor\SocialMediaLinks\Share;
+use Codedor\SocialMediaLinks\View\Components\Share as ComponentsShare;
 
 class SocialMediaLinksServiceProvider extends ServiceProvider
 {
@@ -21,6 +22,10 @@ class SocialMediaLinksServiceProvider extends ServiceProvider
             __DIR__ . '/../../config/social-media-links.php',
             'social-media-links'
         );
+
+        $this->loadViewComponentsAs('social-media-links', [
+            ComponentsShare::class,
+        ]);
 
         $this->registerPublishing();
     }

@@ -17,7 +17,7 @@ abstract class AbstractService
      * @param $provider
      * @param string $url
      */
-    public function buildLink(string $url, string $icon, string $js = null)
+    public function buildLink(string $url, string $icon = '', string $js = null)
     {
         $class = $this->linkPrefix;
         $class .= key_exists('class', $this->options) ? $this->options['class'] : '';
