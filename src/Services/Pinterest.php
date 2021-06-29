@@ -21,8 +21,9 @@ class Pinterest extends AbstractService
     /** @var string */
     protected $icon;
 
-    public function __construct()
+    public function __construct($options = [])
     {
+        $this->options = $options;
         $this->icon = Config::get('social-media-links.services.pinterest.icon');
         $this->base = Config::get('social-media-links.services.pinterest.base_url');
     }

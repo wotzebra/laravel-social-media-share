@@ -18,8 +18,9 @@ class Mail extends AbstractService
     /** @var string */
     protected $icon;
 
-    public function __construct()
+    public function __construct($options = [])
     {
+        $this->options = $options;
         $this->icon = Config::get('social-media-links.services.mail.icon');
     }
 

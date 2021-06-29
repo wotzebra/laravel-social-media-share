@@ -25,9 +25,10 @@ class Linkedin extends AbstractService
     /** @var string */
     protected $summary;
 
-    public function __construct($summary)
+    public function __construct($summary, $options = [])
     {
         $this->summary = $summary;
+        $this->options = $options;
 
         $this->mini = Config::get('social-media-links.services.linkedin.extra')['mini'];
         $this->icon = Config::get('social-media-links.services.linkedin.icon');

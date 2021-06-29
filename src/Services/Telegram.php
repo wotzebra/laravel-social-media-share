@@ -17,12 +17,13 @@ class Telegram extends AbstractService
 {
 
     /** @var string */
-    protected $base
+    protected $base;
     /** @var string */
     protected $icon;
 
-    public function __construct()
+    public function __construct($options = [])
     {
+        $this->options = $options;
         $this->icon = Config::get('social-media-links.services.telegram.icon');
         $this->base = Config::get('social-media-links.services.telegram.base_url');
     }
