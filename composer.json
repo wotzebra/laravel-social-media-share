@@ -44,7 +44,7 @@
     "extra": {
         "laravel": {
           "providers": [
-            "Codedor\\SocialMediaLinks\\Providers\\SocialMediaLinksServiceProvider"
+            "Codedor\\SocialMediaLinks\\SocialMediaLinksServiceProvider"
           ],
           "aliases": {
               "Share": "Codedor\\SocialMediaLinks\\Facades\\Share"

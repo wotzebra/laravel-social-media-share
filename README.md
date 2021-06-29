@@ -220,7 +220,7 @@ And update the asset links in **resources/views/vendor/social-media-links/compon
 To upgrade from 1.x simply republish the config, assets and view files using the following command:
 
 ```bash
-php artisan vendor:publish --provider="Codedor\SocialMediaLinks\Providers\SocialMediaLinksServiceProvider" --force
+php artisan vendor:publish --provider="Codedor\SocialMediaLinks\SocialMediaLinksServiceProvider" --force
 ```
 
 Note that if you made changes made to the config file or view, for example changed a sharing icon you will need to change this again. Use `git diff` to undo the changes that are not necessary.
