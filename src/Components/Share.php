@@ -1,6 +1,6 @@
 <?php
 
-namespace Codedor\SocialMediaLinks\View\Components;
+namespace Codedor\SocialMediaLinks\Components;
 
 use Codedor\SocialMediaLinks\Share as SocialMediaLinksShare;
 use Illuminate\View\Component;

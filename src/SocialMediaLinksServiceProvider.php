@@ -3,7 +3,7 @@
 namespace Codedor\SocialMediaLinks;
 
 use Codedor\SocialMediaLinks\Share;
-use Codedor\SocialMediaLinks\View\Components\Share as ComponentsShare;
+use Codedor\SocialMediaLinks\Components\Share as ComponentsShare;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
