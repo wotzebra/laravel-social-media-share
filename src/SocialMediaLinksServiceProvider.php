@@ -1,6 +1,6 @@
 <?php
 
-namespace Codedor\SocialMediaLinks\Providers;
+namespace Codedor\SocialMediaLinks;
 
 use Codedor\SocialMediaLinks\Share;
 use Codedor\SocialMediaLinks\View\Components\Share as ComponentsShare;
@@ -30,9 +30,9 @@ class SocialMediaLinksServiceProvider extends PackageServiceProvider
     public function bootingPackage()
     {
         $this->publishes([
-                __DIR__ . '/../../resources/sass' =>
+                __DIR__ . '/../resources/sass' =>
                     resource_path('/vendor/social-media-links/css'),
-                __DIR__ . '/../../resources/js' =>
+                __DIR__ . '/../resources/js' =>
                     resource_path('/vendor/social-media-links/js'),
             ],
             'codedor-social-media-links-uncompiled'

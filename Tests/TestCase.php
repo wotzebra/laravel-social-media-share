@@ -1,7 +1,7 @@
 <?php
 namespace Codedor\SocialMediaLinks\Tests;
 
-use Codedor\SocialMediaLinks\Providers\SocialMediaLinksServiceProvider;
+use Codedor\SocialMediaLinks\SocialMediaLinksServiceProvider;
 
 /**
  * Class TestCase
