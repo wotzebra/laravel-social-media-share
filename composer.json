@@ -29,12 +29,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Codedor\\SocialMediaLinks\\": "/"
+            "Codedor\\SocialMediaLinks\\": "./"
         }
     },
     "autoload-dev": {
         "psr-4": {
-          "Codedor\\SocialMediaLinks\\Tests\\": "tests/"
+          "Codedor\\SocialMediaLinks\\Tests\\": "Tests/"
         }
     },
     "scripts": {
