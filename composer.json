@@ -29,7 +29,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Codedor\\SocialMediaLinks\\": "src/"
+            "Codedor\\SocialMediaLinks\\": "/"
         }
     },
     "autoload-dev": {
