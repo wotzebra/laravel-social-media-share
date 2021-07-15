@@ -100,7 +100,7 @@ class Share extends Component
         return view('social-media-share::components.share');
     }
 
-    protected function shareData()
+    public function shareData()
     {
         $this->builder = $this->builder->currentPage(
             $this->title,
