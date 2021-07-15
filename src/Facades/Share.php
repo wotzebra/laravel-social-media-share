@@ -1,13 +1,13 @@
 <?php
 
-namespace Codedor\SocialMediaLinks\Facades;
+namespace Codedor\SocialMediaShare\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * Class Share
  *
- * @package Codedor\SocialMediaLinks\Facades
+ * @package Codedor\SocialMediaShare\Facades
  * @author  Sofian Mourabit <sofian@codedor.be>
  * @since   2019-10-02
  *

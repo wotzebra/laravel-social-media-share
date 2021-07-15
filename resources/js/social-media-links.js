@@ -15,7 +15,7 @@ const popupSize = {
   height: 550
 }
 
-let sharingWrapper = document.querySelector('#js-social-media-links')
+let sharingWrapper = document.querySelector('#js-social-media-share')
 sharingWrapper.addEventListener('click', openPopup, false)
 
 function openPopup (event) {

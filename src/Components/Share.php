@@ -1,8 +1,8 @@
 <?php
 
-namespace Codedor\SocialMediaLinks\Components;
+namespace Codedor\SocialMediaShare\Components;
 
-use Codedor\SocialMediaLinks\Share as SocialMediaLinksShare;
+use Codedor\SocialMediaShare\Share as SocialMediaShare;
 use Illuminate\View\Component;
 
 class Share extends Component
@@ -53,16 +53,16 @@ class Share extends Component
         ],
     ];
 
-    public SocialMediaLinksShare $builder;
+    public SocialMediaShare $builder;
 
     public function __construct(
-        SocialMediaLinksShare $builder,
+        SocialMediaShare $builder,
 
         ?string $title = '',
         ?string $summary = '',
 
         string $extraClasses = '',
-        string $prefix = '<div id="js-social-media-links"><ul class="social-media-links">',
+        string $prefix = '<div id="js-social-media-share"><ul class="social-media-share">',
         string $suffix = '</ul></div>',
 
         bool $facebook = true,
@@ -97,7 +97,7 @@ class Share extends Component
 
     public function render()
     {
-        return view('social-media-links::components.share', [
+        return view('social-media-share::components.share', [
             'shareData' => $this->assembleShareData()
         ]);
     }

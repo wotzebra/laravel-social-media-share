@@ -1,6 +1,6 @@
 <?php
 
-namespace Codedor\SocialMediaLinks\Services;
+namespace Codedor\SocialMediaShare\Services;
 
 use Illuminate\Support\HtmlString;
 
@@ -26,7 +26,7 @@ abstract class AbstractService
 
         return new HtmlString(
             view(
-                'social-media-links::components.social_media_link',
+                'social-media-share::components.social_media_share',
                 compact(
                     'url',
                     'class',

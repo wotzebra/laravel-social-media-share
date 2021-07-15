@@ -1,11 +1,11 @@
 {!! $shareData !!}
 
 @push('head')
-    <link href="{{ asset('vendor/social-media-links/css/social-media-links.css') }}"
+    <link href="{{ asset('vendor/social-media-share/css/social-media-share.css') }}"
     rel="stylesheet"
     media="screen"
     type="text/css">
 @endpush
 @push('scripts')
-    <script src="{{ asset('vendor/social-media-links/js/social-media-links.js') }}"></script>
+    <script src="{{ asset('vendor/social-media-share/js/social-media-share.js') }}"></script>
 @endpush
