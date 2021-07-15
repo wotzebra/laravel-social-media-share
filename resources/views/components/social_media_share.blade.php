@@ -11,7 +11,7 @@
 </li>
 
 @if($js)
-    @push('social-media-link-scripts')
+    @push('social-media-share-scripts')
         {!! $js !!}
     @endpush
 @endif

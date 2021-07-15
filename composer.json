@@ -1,5 +1,5 @@
 {
-    "name": "codedor/laravel-social-media-links",
+    "name": "codedor/laravel-social-media-share",
     "description": "A Laravel package for social sharing. This package is a rewrite from jorenvanhocht/laravel-share.",
     "keywords": [
         "laravel",
@@ -29,12 +29,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Codedor\\SocialMediaLinks\\": "./src"
+            "Codedor\\SocialMediaShare\\": "./src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-          "Codedor\\SocialMediaLinks\\Tests\\": "Tests/"
+          "Codedor\\SocialMediaShare\\Tests\\": "Tests/"
         }
     },
     "scripts": {
@@ -44,10 +44,10 @@
     "extra": {
         "laravel": {
           "providers": [
-            "Codedor\\SocialMediaLinks\\SocialMediaLinksServiceProvider"
+            "Codedor\\SocialMediaShare\\SocialMediaShareServiceProvider"
           ],
           "aliases": {
-              "Share": "Codedor\\SocialMediaLinks\\Facades\\Share"
+              "Share": "Codedor\\SocialMediaShare\\Facades\\Share"
           }
         }
       },

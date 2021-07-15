@@ -1,11 +1,11 @@
 <?php
 
-namespace Codedor\SocialMediaLinks;
+namespace Codedor\SocialMediaShare;
 
 /**
  * Class Share
  *
- * @package Codedor\SocialMediaLinks
+ * @package Codedor\SocialMediaShare
  * @author  Sofian Mourabit <sofian@codedor.be>
  * @since   2019-10-02
  */
@@ -19,7 +19,7 @@ class Share
     /** @var array */
     protected $options = [];
     /** @var string */
-    protected $prefix = '<div id="js-social-media-links"><ul class="social-media-links">';
+    protected $prefix = '<div id="js-social-media-share"><ul class="social-media-share">';
     /** @var string */
     protected $suffix = '</ul></div>';
     /** @var string */

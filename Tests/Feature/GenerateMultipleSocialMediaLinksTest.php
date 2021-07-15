@@ -1,9 +1,9 @@
 <?php
 
-namespace Codedor\SocialMediaLinks\Tests\Feature;
+namespace Codedor\SocialMediaShare\Tests\Feature;
 
-use Codedor\SocialMediaLinks\Facades\Share;
-use Codedor\SocialMediaLinks\Tests\TestCase;
+use Codedor\SocialMediaShare\Facades\Share;
+use Codedor\SocialMediaShare\Tests\TestCase;
 
 class GenerateMultipleSocialMediaLinksTest extends TestCase
 {
@@ -15,10 +15,10 @@ class GenerateMultipleSocialMediaLinksTest extends TestCase
         $result = (string) Share::currentPage('pageTitle')
             ->toFacebook();
 
-        $expected = '<div id="js-social-media-links"><ul class="social-media-links"><li>
+        $expected = '<div id="js-social-media-share"><ul class="social-media-share"><li>
     <a
         href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/"
-        class="js-social-media-link  js-track"
+        class="js-social-media-share  js-track"
         data-action="hit"
         data-category="Share Facebook"
         data-label="/"

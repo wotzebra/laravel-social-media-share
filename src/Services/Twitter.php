@@ -1,14 +1,14 @@
 <?php
 
-namespace Codedor\SocialMediaLinks\Services;
+namespace Codedor\SocialMediaShare\Services;
 
-use Codedor\SocialMediaLinks\Services\AbstractService;
+use Codedor\SocialMediaShare\Services\AbstractService;
 use Illuminate\Support\Facades\Config;
 
 /**
  * Class Twitter
  *
- * @package Codedor\SocialMediaLinks
+ * @package Codedor\SocialMediaShare
  * @author  Sofian Mourabit <sofian@codedor.be>
  * @since   2019-10-02
  */
@@ -24,8 +24,8 @@ class Twitter extends AbstractService
     public function __construct($options = [])
     {
         $this->options = $options;
-        $this->icon = Config::get('social-media-links.services.twitter.icon');
-        $this->base = Config::get('social-media-links.services.twitter.base_url');
+        $this->icon = Config::get('social-media-share.services.twitter.icon');
+        $this->base = Config::get('social-media-share.services.twitter.base_url');
     }
 
     public function buildUrl(string $url, string $title)

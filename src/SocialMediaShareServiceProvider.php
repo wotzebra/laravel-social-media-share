@@ -1,21 +1,21 @@
 <?php
 
-namespace Codedor\SocialMediaLinks;
+namespace Codedor\SocialMediaShare;
 
-use Codedor\SocialMediaLinks\Share;
-use Codedor\SocialMediaLinks\Components\Share as ComponentsShare;
+use Codedor\SocialMediaShare\Share;
+use Codedor\SocialMediaShare\Components\Share as ComponentsShare;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class SocialMediaLinksServiceProvider extends PackageServiceProvider
+class SocialMediaShareServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package) : void
     {
-        $package->name('social-media-links')
+        $package->name('social-media-share')
             ->hasConfigFile()
             ->hasViews()
             ->hasAssets()
-            ->hasViewComponent('social-media-links', ComponentsShare::class);
+            ->hasViewComponent('social-media-share', ComponentsShare::class);
     }
 
     public function registeringPackage()
@@ -31,11 +31,11 @@ class SocialMediaLinksServiceProvider extends PackageServiceProvider
     {
         $this->publishes([
                 __DIR__ . '/../resources/sass' =>
-                    resource_path('/vendor/social-media-links/css'),
+                    resource_path('/vendor/social-media-share/css'),
                 __DIR__ . '/../resources/js' =>
-                    resource_path('/vendor/social-media-links/js'),
+                    resource_path('/vendor/social-media-share/js'),
             ],
-            'codedor-social-media-links-uncompiled'
+            'codedor-social-media-share-uncompiled'
         );
     }
 }
