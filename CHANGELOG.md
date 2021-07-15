@@ -3,6 +3,10 @@
 All Notable changes to `laravel-social-media-link` will be documented in this file
 
 ## [Unreleased]
+## [3.0.0] - 2021-07-15
+### Changed
+- Replaced blade includes with Blade Components.
+- Renamed `Laravel Social Media links` to `Laravel Social Media Share`
 
 ## [2.0.2] - 2021-06-09
 ### Changed
