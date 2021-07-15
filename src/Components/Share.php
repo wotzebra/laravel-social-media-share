@@ -97,12 +97,10 @@ class Share extends Component
 
     public function render()
     {
-        return view('social-media-share::components.share', [
-            'shareData' => $this->assembleShareData()
-        ]);
+        return view('social-media-share::components.share');
     }
 
-    protected function assembleShareData()
+    protected function shareData()
     {
         $this->builder = $this->builder->currentPage(
             $this->title,
