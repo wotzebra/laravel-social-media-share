@@ -9,7 +9,7 @@ abstract class AbstractService
     /** @var array */
     protected $options = [];
     /** @var string */
-    protected $linkPrefix = 'js-social-media-link ';
+    protected $linkPrefix = 'js-social-media-share ';
 
     /**
      * Build a single link

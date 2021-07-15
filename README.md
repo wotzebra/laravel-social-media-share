@@ -48,17 +48,17 @@ This generates:
 <div id="js-social-media-share" class="social-media">
     <ul class="social-media-share">
         <li>
-            <a class="js-social-media-link" href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/your-page">
+            <a class="js-social-media-share" href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/your-page">
                 <i class="fab fa-lg fa-facebook-square"></i>
             </a>
         </li>
         <li>
-            <a class="js-social-media-link" href="http://www.linkedin.com/shareArticle?mini=true&title=pageTitle&summary=pageSummary&url=https://example.com/your-page">
+            <a class="js-social-media-share" href="http://www.linkedin.com/shareArticle?mini=true&title=pageTitle&summary=pageSummary&url=https://example.com/your-page">
                 <i class="fab fa-lg fa-linkedin-square"></i>
             </a>
         </li>
         <li>
-            <a class="js-social-media-link" href="https://twitter.com/intent/tweet?text=pageTitle&url=https://example.com/your-page">
+            <a class="js-social-media-share" href="https://twitter.com/intent/tweet?text=pageTitle&url=https://example.com/your-page">
                 <i class="fab fa-lg fa-twitter-square"></i>
             </a>
         </li>
@@ -141,7 +141,7 @@ Which will generate following html
 <div id="js-social-media-share" class="social-media">
     <ul class="social-media-share">
         <li>
-            <a class="js-social-media-link my-class my-extra-class" href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/your-page">
+            <a class="js-social-media-share my-class my-extra-class" href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/your-page">
                 <i class="fab fa-lg fa-facebook-square"></i>
             </a>
         </li>
@@ -176,7 +176,7 @@ This will output the following html.
 ```html
 <ul id="js-social-media-share" class="social-media-share">
     <li>
-        <a class="js-social-media-link" href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/your-page">
+        <a class="js-social-media-share" href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/your-page">
             <i class="fab fa-lg fa-facebook-square"></i>
         </a>
     </li>

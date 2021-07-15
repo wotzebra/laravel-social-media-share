@@ -18,7 +18,7 @@ class GenerateMultipleSocialMediaLinksTest extends TestCase
         $expected = '<div id="js-social-media-share"><ul class="social-media-share"><li>
     <a
         href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/"
-        class="js-social-media-link  js-track"
+        class="js-social-media-share  js-track"
         data-action="hit"
         data-category="Share Facebook"
         data-label="/"
