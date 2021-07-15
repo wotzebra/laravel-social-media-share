@@ -1,8 +1,8 @@
 <?php
 
-namespace Codedor\SocialMediaLinks\Services;
+namespace Codedor\SocialMediaShare\Services;
 
-use Codedor\SocialMediaLinks\Services\AbstractService;
+use Codedor\SocialMediaShare\Services\AbstractService;
 use Illuminate\Support\Facades\Config;
 
 class Clipboard extends AbstractService
@@ -10,9 +10,11 @@ class Clipboard extends AbstractService
     /** @var string */
     protected $icon;
 
-    public function __construct()
+    public function __construct($options = [])
     {
-        $this->icon = Config::get('social-media-links.services.clipboard.icon');
+        $this->options = $options;
+
+        $this->icon = Config::get('social-media-share.services.clipboard.icon');
         $this->linkPrefix = 'clipboard';
     }
 

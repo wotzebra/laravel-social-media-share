@@ -1,14 +1,14 @@
 <?php
 
-namespace Codedor\SocialMediaLinks\Services;
+namespace Codedor\SocialMediaShare\Services;
 
-use Codedor\SocialMediaLinks\Services\AbstractService;
+use Codedor\SocialMediaShare\Services\AbstractService;
 use Illuminate\Support\Facades\Config;
 
 /**
  * Class Linkedin
  *
- * @package Codedor\SocialMediaLinks
+ * @package Codedor\SocialMediaShare
  * @author  Sofian Mourabit <sofian@codedor.be>
  * @since   2019-10-02
  */
@@ -25,13 +25,14 @@ class Linkedin extends AbstractService
     /** @var string */
     protected $summary;
 
-    public function __construct($summary)
+    public function __construct($summary, $options = [])
     {
         $this->summary = $summary;
+        $this->options = $options;
 
-        $this->mini = Config::get('social-media-links.services.linkedin.extra')['mini'];
-        $this->icon = Config::get('social-media-links.services.linkedin.icon');
-        $this->base = Config::get('social-media-links.services.linkedin.base_url');
+        $this->mini = Config::get('social-media-share.services.linkedin.extra')['mini'];
+        $this->icon = Config::get('social-media-share.services.linkedin.icon');
+        $this->base = Config::get('social-media-share.services.linkedin.base_url');
     }
 
     public function buildUrl(string $url, string $title)

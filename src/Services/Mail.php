@@ -1,14 +1,14 @@
 <?php
 
-namespace Codedor\SocialMediaLinks\Services;
+namespace Codedor\SocialMediaShare\Services;
 
-use Codedor\SocialMediaLinks\Services\AbstractService;
+use Codedor\SocialMediaShare\Services\AbstractService;
 use Illuminate\Support\Facades\Config;
 
 /**
  * Class Mail
  *
- * @package Codedor\SocialMediaLinks
+ * @package Codedor\SocialMediaShare
  * @author  Jyrki De Neve <jyrki@codedor.be>
  * @since   2020-01-30
  */
@@ -18,9 +18,10 @@ class Mail extends AbstractService
     /** @var string */
     protected $icon;
 
-    public function __construct()
+    public function __construct($options = [])
     {
-        $this->icon = Config::get('social-media-links.services.mail.icon');
+        $this->options = $options;
+        $this->icon = Config::get('social-media-share.services.mail.icon');
     }
 
     public function buildUrl(string $url, string $title)

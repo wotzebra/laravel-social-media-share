@@ -1,7 +1,7 @@
 <?php
-namespace Codedor\SocialMediaLinks\Tests;
+namespace Codedor\SocialMediaShare\Tests;
 
-use Codedor\SocialMediaLinks\Providers\SocialMediaLinksServiceProvider;
+use Codedor\SocialMediaShare\SocialMediaShareServiceProvider;
 
 /**
  * Class TestCase
@@ -15,7 +15,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
     protected function getPackageProviders($app)
     {
         return [
-            SocialMediaLinksServiceProvider::class
+            SocialMediaShareServiceProvider::class
         ];
     }
 

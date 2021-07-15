@@ -10,9 +10,9 @@ const mix = require('laravel-mix')
  | file for the application as well as bundling up all the JS files.
  |
  */
-mix.setPublicPath('dist')
-  .js('resources/js/social-media-links.js', 'js')
-  .sass('resources/sass/social-media-links.scss', 'css')
+mix.setPublicPath('resources/dist')
+  .js('resources/js/social-media-share.js', 'js')
+  .sass('resources/sass/social-media-share.scss', 'css')
   .sourceMaps()
   .webpackConfig({
     devtool: 'source-map'

@@ -1,5 +1,5 @@
 {
-    "name": "codedor/laravel-social-media-links",
+    "name": "codedor/laravel-social-media-share",
     "description": "A Laravel package for social sharing. This package is a rewrite from jorenvanhocht/laravel-share.",
     "keywords": [
         "laravel",
@@ -8,7 +8,7 @@
         "social media links",
         "codedor",
         "Code d'Or"
-    ], 
+    ],
     "homepage": "https://codedor.be",
     "license": "MIT",
     "authors": [
@@ -19,21 +19,22 @@
         }
     ],
     "require": {
-        "php": ">=7.1",
-        "illuminate/support": "~5.8|^6.0"
+        "php": "^7.4 || ^8.0",
+        "illuminate/support": "^8.0",
+        "spatie/laravel-package-tools": "^1.9"
     },
     "require-dev": {
-        "orchestra/testbench": "^3.8|^4.0",
-        "phpunit/phpunit": "^8.2"
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
     },
     "autoload": {
         "psr-4": {
-            "Codedor\\SocialMediaLinks\\": "src/"
+            "Codedor\\SocialMediaShare\\": "./src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-          "Codedor\\SocialMediaLinks\\Tests\\": "tests/"
+          "Codedor\\SocialMediaShare\\Tests\\": "Tests/"
         }
     },
     "scripts": {
@@ -43,10 +44,10 @@
     "extra": {
         "laravel": {
           "providers": [
-            "Codedor\\SocialMediaLinks\\Providers\\SocialMediaLinksServiceProvider"
+            "Codedor\\SocialMediaShare\\SocialMediaShareServiceProvider"
           ],
           "aliases": {
-              "Share": "Codedor\\SocialMediaLinks\\Facades\\Share"
+              "Share": "Codedor\\SocialMediaShare\\Facades\\Share"
           }
         }
       },

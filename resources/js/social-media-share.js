@@ -15,12 +15,12 @@ const popupSize = {
   height: 550
 }
 
-let sharingWrapper = document.querySelector('#js-social-media-links')
+let sharingWrapper = document.querySelector('#js-social-media-share')
 sharingWrapper.addEventListener('click', openPopup, false)
 
 function openPopup (event) {
   if (windowObjectReference == null || windowObjectReference.closed) {
-    if (event.target.parentNode.classList.contains('js-social-media-link')) {
+    if (event.target.parentNode.classList.contains('js-social-media-share')) {
       const href = event.target.parentNode.getAttribute('href')
 
       if (href.startsWith('http')) {
