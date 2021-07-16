@@ -19,9 +19,9 @@ class Share
     /** @var array */
     protected $options = [];
     /** @var string */
-    protected $prefix = '<div id="js-social-media-share"><ul class="social-media-share">';
+    protected $prefix = '<ul id="js-social-media-share" class="social-media-share">';
     /** @var string */
-    protected $suffix = '</ul></div>';
+    protected $suffix = '</ul>';
     /** @var string */
     protected $html = '';
 

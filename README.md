@@ -45,25 +45,23 @@ To pull in the javascript add this line right **before** the closing BODY tag in
 This generates:
 
 ```html
-<div id="js-social-media-share" class="social-media">
-    <ul class="social-media-share">
-        <li>
-            <a class="js-social-media-share" href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/your-page">
-                <i class="fab fa-lg fa-facebook-square"></i>
-            </a>
-        </li>
-        <li>
-            <a class="js-social-media-share" href="http://www.linkedin.com/shareArticle?mini=true&title=pageTitle&summary=pageSummary&url=https://example.com/your-page">
-                <i class="fab fa-lg fa-linkedin-square"></i>
-            </a>
-        </li>
-        <li>
-            <a class="js-social-media-share" href="https://twitter.com/intent/tweet?text=pageTitle&url=https://example.com/your-page">
-                <i class="fab fa-lg fa-twitter-square"></i>
-            </a>
-        </li>
-    </ul>
-</div>
+<ul id="js-social-media-share" class="social-media-share">
+    <li>
+        <a class="js-social-media-share" href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/your-page">
+            <i class="fab fa-lg fa-facebook-square"></i>
+        </a>
+    </li>
+    <li>
+        <a class="js-social-media-share" href="http://www.linkedin.com/shareArticle?mini=true&title=pageTitle&summary=pageSummary&url=https://example.com/your-page">
+            <i class="fab fa-lg fa-linkedin-square"></i>
+        </a>
+    </li>
+    <li>
+        <a class="js-social-media-share" href="https://twitter.com/intent/tweet?text=pageTitle&url=https://example.com/your-page">
+            <i class="fab fa-lg fa-twitter-square"></i>
+        </a>
+    </li>
+</ul>
 ```
 ### Available services
 
@@ -131,22 +129,20 @@ You can add extra class(es) by passing an array as the second parameter on the c
 ```php
 <x-social-media-share-share
     :title='$model->title'
-    extra-classes='my-class my-extra-class'
+    link-classes='my-class my-extra-class'
 />
 ```
 
 Which will generate following html
 
 ```html
-<div id="js-social-media-share" class="social-media">
-    <ul class="social-media-share">
-        <li>
-            <a class="js-social-media-share my-class my-extra-class" href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/your-page">
-                <i class="fab fa-lg fa-facebook-square"></i>
-            </a>
-        </li>
-    </ul>
-</div>
+<ul id="js-social-media-share" class="social-media-share">
+    <li>
+        <a class="js-social-media-share my-class my-extra-class" href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/your-page">
+            <i class="fab fa-lg fa-facebook-square"></i>
+        </a>
+    </li>
+</ul>
 ```
 
 ### Custom wrapping
@@ -154,19 +150,17 @@ Which will generate following html
 By default social links will are wrapped in the following html
 
 ```html
-<div id="js-social-media-share" class="social-media">
-    <ul class="social-media-share">
-        <!-- social media links will be added here -->
-    </ul>
-</div>
+<ul id="js-social-media-share" class="social-media-share">
+    <!-- social media links will be added here -->
+</ul>
 ```
 
-This can be customised by passing the prefix as the third and suffix as the fourth parameter.
+This can be customised by passing the wrapperClasses prop.
 
 ```php
 <x-social-media-share-share
     :title='$model->title'
-    prefix='<ul id="js-social-media-share" class="social-media-share">'
+    wrapper-classes='social-media-share'
 />
 ```
 Please keep in mind you need to have the **js-social-media-share** id present for the javascript to do its magic.

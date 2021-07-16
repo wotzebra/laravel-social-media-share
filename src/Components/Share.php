@@ -10,9 +10,8 @@ class Share extends Component
     public $title;
     public $summary;
 
-    public string $extraClasses;
-    public string $prefix;
-    public string $suffix;
+    public string $linkClasses;
+    public string $wrapperClasses = 'social-media-share';
 
     public $shareOptions = [
         'facebook' => [
@@ -61,9 +60,8 @@ class Share extends Component
         ?string $title = '',
         ?string $summary = '',
 
-        string $extraClasses = '',
-        string $prefix = '<div id="js-social-media-share"><ul class="social-media-share">',
-        string $suffix = '</ul></div>',
+        string $linkClasses = '',
+        string $wrapperClasses = '',
 
         bool $facebook = true,
         bool $twitter = true,
@@ -80,9 +78,8 @@ class Share extends Component
         $this->title = $title;
         $this->summary = $summary;
 
-        $this->extraClasses = $extraClasses;
-        $this->prefix = $prefix;
-        $this->suffix = $suffix;
+        $this->linkClasses = $linkClasses;
+        $this->wrapperClasses = $wrapperClasses;
 
         $this->shareOptions['clipboard']['enabled'] = $clipboard;
         $this->shareOptions['facebook']['enabled'] = $facebook;
@@ -104,9 +101,9 @@ class Share extends Component
     {
         $this->builder = $this->builder->currentPage(
             $this->title,
-            ['class' => $this->extraClasses],
-            $this->prefix,
-            $this->suffix
+            ['class' => $this->linkClasses],
+            "<ul id='js-social-media-share' class='$this->wrapperClasses'>",
+            '</ul>'
         );
 
         foreach ($this->shareOptions as $key => $value) {
