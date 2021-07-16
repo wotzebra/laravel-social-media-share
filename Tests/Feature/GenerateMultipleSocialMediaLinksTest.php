@@ -5,6 +5,8 @@ namespace Codedor\SocialMediaShare\Tests\Feature;
 use Codedor\SocialMediaShare\Facades\Share;
 use Codedor\SocialMediaShare\Tests\TestCase;
 
+use function PHPUnit\Framework\assertEquals;
+
 class GenerateMultipleSocialMediaLinksTest extends TestCase
 {
      /**
