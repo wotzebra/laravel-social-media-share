@@ -65,204 +65,21 @@ This generates:
     </ul>
 </div>
 ```
-### Available services
 
-* Facebook - Twitter - Linkedin
-* WhatsApp - Reddit - Telegram - Pinterest - Mail - Clipboard
+## Documentation
 
-## Alternative usage
+For the full documentation, check [here](./docs/index.md).
 
-### Creating a social media link
-
-The easiest way to share a page is to use:
-
-```php
-Share::currentPage('Page Title')->toFacebook();
-```
-
-### Creating multiple social media Links
-
-You can easely create multiple share links at once by chaining the social methods:
-
-```php
-Share::currentPage('Page Title')
-    ->toFacebook()
-    ->toTwitter()
-    ->toLinkedin('Linkedin accepts an extra summary here')
-    ->toWhatsapp()
-    ->toReddit()
-    ->toTelegram()
-    ->toPinterest()
-    ->toMail()
-    ->toClipboard();
-
-OR
-
-<x-social-media-share-share
-    :title='$model->title'
-    :summary='$model->intro'
-    facebook
-    twitter
-    linkedin
-    whatsapp
-    reddit
-    telegram
-    pinterest
-    mail
-    clipboard
-/>
-```
-
-## Options
-
-### Font Awesome
-
-You can change the default icons you want to use in the config file:
-
- ```config/social-media-share.php```
-
-Laravel Social media links uses Font Awesome v5 by default but you can replace it to any version you are using.
-
-
-### Add extra classes to the social media links
-
-You can add extra class(es) by passing an array as the second parameter on the currentPage method.
-
-```php
-<x-social-media-share-share
-    :title='$model->title'
-    extra-classes='my-class my-extra-class'
-/>
-```
-
-Which will generate following html
-
-```html
-<div id="js-social-media-share" class="social-media">
-    <ul class="social-media-share">
-        <li>
-            <a class="js-social-media-share my-class my-extra-class" href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/your-page">
-                <i class="fab fa-lg fa-facebook-square"></i>
-            </a>
-        </li>
-    </ul>
-</div>
-```
-
-### Custom wrapping
-
-By default social links will are wrapped in the following html
-
-```html
-<div id="js-social-media-share" class="social-media">
-    <ul class="social-media-share">
-        <!-- social media links will be added here -->
-    </ul>
-</div>
-```
-
-This can be customised by passing the prefix as the third and suffix as the fourth parameter.
-
-```php
-<x-social-media-share-share
-    :title='$model->title'
-    prefix='<ul id="js-social-media-share" class="social-media-share">'
-/>
-```
-Please keep in mind you need to have the **js-social-media-share** id present for the javascript to do its magic.
-
-This will output the following html.
-
-```html
-<ul id="js-social-media-share" class="social-media-share">
-    <li>
-        <a class="js-social-media-share" href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/your-page">
-            <i class="fab fa-lg fa-facebook-square"></i>
-        </a>
-    </li>
-</ul>
-```
-
-#### Sharing a custom url
-
-You can specify the page you which to share manually using the `page` function
-
-```php
-Share::page('https://example.com/your-page')->toFacebook();
-```
-
-#### Customizing the source assets
-
-If needed you can publish the package uncompiled js and sass files using the following tag:
+## Testing
 
 ```bash
-php artisan vendor:publish --tag=codedor-social-media-share-uncompiled
-```
-
-However this requires you to add the following lines to your webpack.mix.js file
-
-```html
-  .js('resources/js/social-media-share.js', 'js')
-  .sass('resources/sass/social-media-share.scss', 'css')
-```
-
-And update the asset links in **resources/views/vendor/social-media-share/components/share.blade.php** to:
-```html
- <link href="{{ mix('css/social-media-share.css') }}"
-    rel="stylesheet"
-    media="screen"
-    type="text/css">
-
-<script src="{{ mix('js/social-media-share.js') }}"></script>
-```
-## Upgrading from 1.0.x to 2.0.x
-
-To upgrade from 1.x simply republish the config, assets and view files using the following command:
-
-```bash
-php artisan vendor:publish --provider="Codedor\SocialMediaShare\SocialMediaShareServiceProvider" --force
-```
-
-Note that if you made changes made to the config file or view, for example changed a sharing icon you will need to change this again. Use `git diff` to undo the changes that are not necessary.
-
-Make sure these are in your layouts file:
-```blade
-@stack('head')
-```
-
-```blade
-@stack('scripts')
-```
-
-## Upgrading from 2.x to 3.x
-To upgrade to 3.x you need Laravel version 8.x.
-
-Replace the blade includes with blade components like the following example:
-```php
-@include('components.share', [
-    'title' => $model->title,
-    'summary' => $model->intro
-])
-
-<x-social-media-share-share
-    :title='$model->title'
-    :summary='$model->intro'
-/>
-```
-
-And republish your assets 
-```bash
-php artisan vendor:publish --provider="Codedor\SocialMediaShare\SocialMediaShareServiceProvider" --force
+vendor/bin/phpunit
 ```
 
 ## Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
-## Security Vulnerabilities
+## Upgrading
 
-If you discover a security vulnerability within Laravel Social Sharing, please send an e-mail to Sofian Mourabit via [sofian@codedor.be](mailto:sofian@codedor.be). All security vulnerabilities will be promptly addressed.
-
-## License
-
-This package is open-source software licensed under the [MIT License](LICENSE.md).
+Please see [UPGRADING](UPGRADING.md) for more information on how to upgrade to a new version.
