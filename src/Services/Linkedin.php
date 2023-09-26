@@ -2,7 +2,6 @@
 
 namespace Codedor\SocialMediaShare\Services;
 
-use Codedor\SocialMediaShare\Services\AbstractService;
 use Illuminate\Support\Facades\Config;
 
 /**
@@ -55,7 +54,7 @@ class Linkedin extends AbstractService
             '&title=' . urlencode($title) .
             '&summary=' . urlencode($this->summary) .
             '&url=' . $url;
+
         return $baseUrl;
     }
-
 }

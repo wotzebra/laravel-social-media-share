@@ -2,7 +2,6 @@
 
 namespace Codedor\SocialMediaShare\Services;
 
-use Codedor\SocialMediaShare\Services\AbstractService;
 use Illuminate\Support\Facades\Config;
 
 /**
@@ -34,5 +33,4 @@ class Whatsapp extends AbstractService
 
         return $link;
     }
-
 }

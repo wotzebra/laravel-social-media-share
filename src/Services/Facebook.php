@@ -2,7 +2,6 @@
 
 namespace Codedor\SocialMediaShare\Services;
 
-use Codedor\SocialMediaShare\Services\AbstractService;
 use Illuminate\Support\Facades\Config;
 
 /**
@@ -40,5 +39,4 @@ class Facebook extends AbstractService
     {
         return $this->base . $url;
     }
-
 }
