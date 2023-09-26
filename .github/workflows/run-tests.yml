@@ -1,0 +1,46 @@
+name: run-tests
+
+on: [push]
+
+jobs:
+  phpunit:
+    runs-on: self-hosted
+    container: setupphp/node:latest
+    strategy:
+      fail-fast: true
+      matrix:
+        php: [7.4, 8.0, 8.1]
+        laravel: [8.*, 9.*]
+        exclude:
+          - laravel: 9.*
+            php: 7.4
+
+    name: PHP${{ matrix.php }} - Laravel${{ matrix.laravel }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo
+          coverage: none
+
+      - name: Login to Laravel Nova
+        run: composer config http-basic.nova.laravel.com ${NOVA_USERNAME} ${NOVA_PASSWORD}
+        env:
+          NOVA_USERNAME: ${{ secrets.NOVA_USERNAME }}
+          NOVA_PASSWORD: ${{ secrets.NOVA_PASSWORD }}
+
+      - name: Setup problem matchers
+        run: |
+          echo "::add-matcher::${{ runner.tool_cache }}/php.json"
+          echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+      - name: Install dependencies
+        run: |
+          composer require "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update --dev
+          composer update --prefer-stable --prefer-dist --no-interaction
+      - name: Execute tests
+        run: vendor/bin/phpunit

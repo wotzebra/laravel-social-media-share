@@ -3,6 +3,10 @@
 All Notable changes to `laravel-social-media-link` will be documented in this file
 
 ## [Unreleased]
+## [3.1.0] - 2022-11-04
+### Changed
+- Changed composer dependecies
+
 ## [3.0.0] - 2021-07-15
 ### Changed
 - Replaced blade includes with Blade Components.
