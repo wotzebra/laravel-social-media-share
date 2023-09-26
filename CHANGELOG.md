@@ -3,9 +3,16 @@
 All Notable changes to `laravel-social-media-link` will be documented in this file
 
 ## [Unreleased]
-## [3.1.0] - 2022-11-04
+
+## [3.2.0] - 2023-09-26
+
 ### Changed
-- Changed composer dependecies
+- Drop L9 support
+- 
+## [3.1.0] - 2023-09-26
+
+### Changed
+- Add L9 support
 
 ## [3.0.0] - 2021-07-15
 ### Changed
