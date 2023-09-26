@@ -9,11 +9,8 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php: [7.4, 8.0, 8.1]
-        laravel: [8.*, 9.*]
-        exclude:
-          - laravel: 9.*
-            php: 7.4
+        php: [8.0, 8.1, 8.2]
+        laravel: [9.*, 10.*]
 
     name: PHP${{ matrix.php }} - Laravel${{ matrix.laravel }}
 
@@ -28,12 +25,6 @@ jobs:
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo
           coverage: none
 
-      - name: Login to Laravel Nova
-        run: composer config http-basic.nova.laravel.com ${NOVA_USERNAME} ${NOVA_PASSWORD}
-        env:
-          NOVA_USERNAME: ${{ secrets.NOVA_USERNAME }}
-          NOVA_PASSWORD: ${{ secrets.NOVA_PASSWORD }}
-
       - name: Setup problem matchers
         run: |
           echo "::add-matcher::${{ runner.tool_cache }}/php.json"
@@ -43,4 +34,4 @@ jobs:
           composer require "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update --dev
           composer update --prefer-stable --prefer-dist --no-interaction
       - name: Execute tests
-        run: vendor/bin/phpunit
+        run: vendor/bin/pest
