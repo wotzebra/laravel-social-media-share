@@ -57,14 +57,11 @@ class Share extends Component
 
     public function __construct(
         SocialMediaShare $builder,
-
         ?string $title = '',
         ?string $summary = '',
-
         string $extraClasses = '',
         string $prefix = '<div id="js-social-media-share"><ul class="social-media-share">',
         string $suffix = '</ul></div>',
-
         bool $facebook = true,
         bool $twitter = true,
         bool $linkedin = true,

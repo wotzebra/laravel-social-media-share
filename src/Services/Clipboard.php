@@ -2,7 +2,6 @@
 
 namespace Codedor\SocialMediaShare\Services;
 
-use Codedor\SocialMediaShare\Services\AbstractService;
 use Illuminate\Support\Facades\Config;
 
 class Clipboard extends AbstractService

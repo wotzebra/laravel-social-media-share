@@ -1,7 +1,6 @@
 <?php
 
 use Codedor\SocialMediaShare\Facades\Share;
-use Codedor\SocialMediaShare\Tests\TestCase;
 
 it('can generate multiple social media links', function () {
     $result = (string) Share::currentPage('pageTitle')

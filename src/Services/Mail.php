@@ -2,7 +2,6 @@
 
 namespace Codedor\SocialMediaShare\Services;
 
-use Codedor\SocialMediaShare\Services\AbstractService;
 use Illuminate\Support\Facades\Config;
 
 /**
@@ -31,6 +30,7 @@ class Mail extends AbstractService
             e($title),
             $url
         );
+
         return $this->buildLink($link, $this->icon);
     }
 }

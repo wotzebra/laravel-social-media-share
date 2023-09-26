@@ -39,6 +39,7 @@ class Share
         string $suffix = null
     ) {
         $url = request()->getUri();
+
         return $this->page($url, $title, $options, $prefix, $suffix);
     }
 
@@ -76,7 +77,7 @@ class Share
     {
         $entity = new Services\Facebook($this->options);
 
-        $this->html .=  $entity->buildUrl($this->url, $this->title);
+        $this->html .= $entity->buildUrl($this->url, $this->title);
 
         return $this;
     }
@@ -90,7 +91,7 @@ class Share
     {
         $entity = new Services\Linkedin($summary, $this->options);
 
-        $this->html .=  $entity->buildUrl($this->url, $this->title);
+        $this->html .= $entity->buildUrl($this->url, $this->title);
 
         return $this;
     }
@@ -104,7 +105,7 @@ class Share
     {
         $entity = new Services\Twitter($this->options);
 
-        $this->html .=  $entity->buildUrl($this->url, $this->title);
+        $this->html .= $entity->buildUrl($this->url, $this->title);
 
         return $this;
     }
@@ -118,7 +119,7 @@ class Share
     {
         $entity = new Services\Whatsapp($this->options);
 
-        $this->html .=  $entity->buildUrl($this->url, $this->title);
+        $this->html .= $entity->buildUrl($this->url, $this->title);
 
         return $this;
     }
@@ -132,7 +133,7 @@ class Share
     {
         $entity = new Services\Telegram($this->options);
 
-        $this->html .=  $entity->buildUrl($this->url, $this->title);
+        $this->html .= $entity->buildUrl($this->url, $this->title);
 
         return $this;
     }
@@ -146,7 +147,7 @@ class Share
     {
         $entity = new Services\Reddit($this->options);
 
-        $this->html .=  $entity->buildUrl($this->url, $this->title);
+        $this->html .= $entity->buildUrl($this->url, $this->title);
 
         return $this;
     }
@@ -160,7 +161,7 @@ class Share
     {
         $entity = new Services\Pinterest($this->options);
 
-        $this->html .=  $entity->buildUrl($this->url, $this->title);
+        $this->html .= $entity->buildUrl($this->url, $this->title);
 
         return $this;
     }
@@ -174,7 +175,7 @@ class Share
     {
         $entity = new Services\Mail($this->options);
 
-        $this->html .=  $entity->buildUrl($this->url, $this->title);
+        $this->html .= $entity->buildUrl($this->url, $this->title);
 
         return $this;
     }
@@ -188,7 +189,7 @@ class Share
     {
         $entity = new Services\Clipboard($this->options);
 
-        $this->html .=  $entity->buildUrl($this->url, $this->title);
+        $this->html .= $entity->buildUrl($this->url, $this->title);
 
         return $this;
     }
@@ -212,9 +213,9 @@ class Share
         $entity = null;
         if ($service === 'Facebook') {
             $entity = new Services\Facebook($this->options);
-        } else if ($service === 'Twitter') {
+        } elseif ($service === 'Twitter') {
             $entity = new Services\Twitter($this->options);
-        } else if ($service === 'LinkedIn') {
+        } elseif ($service === 'LinkedIn') {
             $entity = new Services\Linkedin($this->title, $this->options);
         }
 
@@ -231,11 +232,11 @@ class Share
      */
     protected function setPrefixAndSuffix($prefix, $suffix): void
     {
-        if (!is_null($prefix)) {
+        if (! is_null($prefix)) {
             $this->prefix = $prefix;
         }
 
-        if (!is_null($suffix)) {
+        if (! is_null($suffix)) {
             $this->suffix = $suffix;
         }
     }

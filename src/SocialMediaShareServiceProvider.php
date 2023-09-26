@@ -2,7 +2,6 @@
 
 namespace Codedor\SocialMediaShare;
 
-use Codedor\SocialMediaShare\Share;
 use Codedor\SocialMediaShare\Components\Share as ComponentsShare;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -29,7 +28,8 @@ class SocialMediaShareServiceProvider extends PackageServiceProvider
 
     public function bootingPackage()
     {
-        $this->publishes([
+        $this->publishes(
+            [
                 __DIR__ . '/../resources/sass' =>
                     resource_path('/vendor/social-media-share/css'),
                 __DIR__ . '/../resources/js' =>
