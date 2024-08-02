@@ -4,8 +4,7 @@ on: [push]
 
 jobs:
   phpunit:
-    runs-on: self-hosted
-    container: setupphp/node:latest
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: true
       matrix:
