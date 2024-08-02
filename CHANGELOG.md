@@ -4,11 +4,16 @@ All Notable changes to `laravel-social-media-link` will be documented in this fi
 
 ## [Unreleased]
 
+## [3.2.3] - 2024-08-02
+
+### Changed
+- Add Laravel 11 support
+
 ## [3.2.0] - 2023-09-26
 
 ### Changed
 - Drop L9 support
-- 
+
 ## [3.1.0] - 2023-09-26
 
 ### Changed
