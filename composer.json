@@ -11,21 +11,14 @@
     ],
     "homepage": "https://codedor.be",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Sofian Mourabit",
-            "email": "sofian@codedor.be",
-            "homepage": "https://codedor.be"
-        }
-    ],
     "require": {
-        "php": "^8.1|^8.2|^8.3",
-        "illuminate/support": "^10.0|^11.0",
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0|^12.0",
         "spatie/laravel-package-tools": "^1.9"
     },
     "require-dev": {
-        "orchestra/testbench": "^8.0|^9.0",
-        "pestphp/pest": "^2.0"
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "pestphp/pest": "^2.0|^3.0"
     },
     "autoload": {
         "psr-4": {
