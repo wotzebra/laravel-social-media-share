@@ -2,8 +2,8 @@
 
 namespace Wotz\SocialMediaShare\Components;
 
-use Wotz\SocialMediaShare\Share as SocialMediaShare;
 use Illuminate\View\Component;
+use Wotz\SocialMediaShare\Share as SocialMediaShare;
 
 class Share extends Component
 {

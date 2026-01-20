@@ -2,9 +2,9 @@
 
 namespace Wotz\SocialMediaShare;
 
-use Wotz\SocialMediaShare\Components\Share as ComponentsShare;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Wotz\SocialMediaShare\Components\Share as ComponentsShare;
 
 class SocialMediaShareServiceProvider extends PackageServiceProvider
 {
