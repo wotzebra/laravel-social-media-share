@@ -1,14 +1,14 @@
 <?php
 
-namespace Codedor\SocialMediaShare;
+namespace Wotz\SocialMediaShare;
 
-use Codedor\SocialMediaShare\Components\Share as ComponentsShare;
+use Wotz\SocialMediaShare\Components\Share as ComponentsShare;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class SocialMediaShareServiceProvider extends PackageServiceProvider
 {
-    public function configurePackage(Package $package) : void
+    public function configurePackage(Package $package): void
     {
         $package->name('social-media-share')
             ->hasConfigFile()
@@ -30,10 +30,8 @@ class SocialMediaShareServiceProvider extends PackageServiceProvider
     {
         $this->publishes(
             [
-                __DIR__ . '/../resources/sass' =>
-                    resource_path('/vendor/social-media-share/css'),
-                __DIR__ . '/../resources/js' =>
-                    resource_path('/vendor/social-media-share/js'),
+                __DIR__ . '/../resources/sass' => resource_path('/vendor/social-media-share/css'),
+                __DIR__ . '/../resources/js' => resource_path('/vendor/social-media-share/js'),
             ],
             'codedor-social-media-share-uncompiled'
         );

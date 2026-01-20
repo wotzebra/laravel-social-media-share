@@ -1,22 +1,21 @@
 <?php
 
-namespace Codedor\SocialMediaShare\Services;
+namespace Wotz\SocialMediaShare\Services;
 
 use Illuminate\Support\Facades\Config;
 
 /**
  * Class Telegram
  *
- * @package Codedor\SocialMediaShare
  * @author  Sofian Mourabit <sofian@codedor.be>
+ *
  * @since   2019-10-02
  */
-
 class Telegram extends AbstractService
 {
-
     /** @var string */
     protected $base;
+
     /** @var string */
     protected $icon;
 

@@ -1,42 +1,42 @@
 <?php
 
-namespace Codedor\SocialMediaShare;
+namespace Wotz\SocialMediaShare;
 
 /**
  * Class Share
  *
- * @package Codedor\SocialMediaShare
  * @author  Sofian Mourabit <sofian@codedor.be>
+ *
  * @since   2019-10-02
  */
-
 class Share
 {
     /** @var string */
     protected $url;
+
     /** @var string */
     protected $title = 'Whoops no title found!';
+
     /** @var array */
     protected $options = [];
+
     /** @var string */
     protected $prefix = '<div id="js-social-media-share"><ul class="social-media-share">';
+
     /** @var string */
     protected $suffix = '</ul></div>';
+
     /** @var string */
     protected $html = '';
 
     /**
-     * @param string $title
-     * @param array $options
-     * @param string $prefix
-     * @param string $suffix
      * @return $this
      */
     public function currentPage(
-        string $title = null,
+        ?string $title = null,
         array $options = [],
-        string $prefix = null,
-        string $suffix = null
+        ?string $prefix = null,
+        ?string $suffix = null
     ) {
         $url = request()->getUri();
 
@@ -44,16 +44,14 @@ class Share
     }
 
     /**
-     * @param $url
-     * @param string $title
-     * @param array $options
-     * @param string $prefix
-     * @param string $suffix
+     * @param  array  $options
+     * @param  string  $prefix
+     * @param  string  $suffix
      * @return $this
      */
     public function page(
         string $url,
-        string $title = null,
+        ?string $title = null,
         $options = [],
         $prefix = null,
         $suffix = null
@@ -69,10 +67,10 @@ class Share
     }
 
     /**
-     * Facebook share link
-     *
-     * @return $this
-     */
+     * Facebook share link
+     *
+     * @return $this
+     */
     public function toFacebook()
     {
         $entity = new Services\Facebook($this->options);
@@ -83,10 +81,10 @@ class Share
     }
 
     /**
-     * Linkedin share link
-     *
-     * @return $this
-     */
+     * Linkedin share link
+     *
+     * @return $this
+     */
     public function toLinkedin($summary)
     {
         $entity = new Services\Linkedin($summary, $this->options);
@@ -97,10 +95,10 @@ class Share
     }
 
     /**
-     * Twitter share link
-     *
-     * @return $this
-     */
+     * Twitter share link
+     *
+     * @return $this
+     */
     public function toTwitter()
     {
         $entity = new Services\Twitter($this->options);
@@ -111,10 +109,10 @@ class Share
     }
 
     /**
-     * Whatsapp share link
-     *
-     * @return $this
-     */
+     * Whatsapp share link
+     *
+     * @return $this
+     */
     public function toWhatsapp()
     {
         $entity = new Services\Whatsapp($this->options);
@@ -125,10 +123,10 @@ class Share
     }
 
     /**
-     * Telegram share link
-     *
-     * @return $this
-     */
+     * Telegram share link
+     *
+     * @return $this
+     */
     public function toTelegram()
     {
         $entity = new Services\Telegram($this->options);
@@ -139,10 +137,10 @@ class Share
     }
 
     /**
-     * Telegram share link
-     *
-     * @return $this
-     */
+     * Telegram share link
+     *
+     * @return $this
+     */
     public function toReddit()
     {
         $entity = new Services\Reddit($this->options);
@@ -153,10 +151,10 @@ class Share
     }
 
     /**
-     * Pinterest share link
-     *
-     * @return $this
-     */
+     * Pinterest share link
+     *
+     * @return $this
+     */
     public function toPinterest()
     {
         $entity = new Services\Pinterest($this->options);
@@ -167,10 +165,10 @@ class Share
     }
 
     /**
-     * Mail share link
-     *
-     * @return $this
-     */
+     * Mail share link
+     *
+     * @return $this
+     */
     public function toMail()
     {
         $entity = new Services\Mail($this->options);
@@ -181,10 +179,10 @@ class Share
     }
 
     /**
-     * Clipboard Copy
-     *
-     * @return $this
-     */
+     * Clipboard Copy
+     *
+     * @return $this
+     */
     public function toClipboard()
     {
         $entity = new Services\Clipboard($this->options);
@@ -197,8 +195,6 @@ class Share
     /**
      * Return a string with html at the end
      * of the chain.
-     *
-     * @return string
      */
     public function __toString(): string
     {
@@ -227,8 +223,8 @@ class Share
     /**
      * Optionally Set custom prefix and/or suffix
      *
-     * @param string $prefix
-     * @param string $suffix
+     * @param  string  $prefix
+     * @param  string  $suffix
      */
     protected function setPrefixAndSuffix($prefix, $suffix): void
     {

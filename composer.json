@@ -1,47 +1,40 @@
 {
-    "name": "codedor/laravel-social-media-share",
+    "name": "wotz/laravel-social-media-share",
     "description": "A Laravel package for social sharing. This package is a rewrite from jorenvanhocht/laravel-share.",
     "keywords": [
         "laravel",
         "social",
         "sharing",
         "social media links",
-        "codedor",
-        "Code d'Or"
+        "who owns the zebra"
     ],
-    "homepage": "https://codedor.be",
+    "homepage": "https://github.com/wotzebra/laravel-social-media-share",
     "license": "MIT",
     "require": {
-        "php": "^8.1",
-        "illuminate/support": "^10.0|^11.0|^12.0",
+        "php": "^8.4",
+        "illuminate/support": "^12.0",
         "spatie/laravel-package-tools": "^1.9"
     },
     "require-dev": {
-        "orchestra/testbench": "^8.0|^9.0|^10.0",
-        "pestphp/pest": "^2.0|^3.0"
+        "laravel/pint": "^1.27",
+        "orchestra/testbench": "^10.0",
+        "pestphp/pest": "^4.0"
     },
     "autoload": {
         "psr-4": {
-            "Codedor\\SocialMediaShare\\": "./src"
+            "Wotz\\SocialMediaShare\\": "./src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-          "Codedor\\SocialMediaShare\\Tests\\": "tests/"
+          "Wotz\\SocialMediaShare\\Tests\\": "tests/"
         }
-    },
-    "scripts": {
-      "test": "vendor/bin/phpunit",
-      "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
     },
     "extra": {
         "laravel": {
           "providers": [
-            "Codedor\\SocialMediaShare\\SocialMediaShareServiceProvider"
-          ],
-          "aliases": {
-              "Share": "Codedor\\SocialMediaShare\\Facades\\Share"
-          }
+            "Wotz\\SocialMediaShare\\SocialMediaShareServiceProvider"
+          ]
         }
       },
     "config": {

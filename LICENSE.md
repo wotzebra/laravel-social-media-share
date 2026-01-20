@@ -1,6 +1,6 @@
 # The MIT License (MIT)
 
-Copyright (c) 2019 Sofian Mourabit <sofian@codedor.be>
+Copyright (c) 2019 Who Owns The Zebra
 
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 > of this software and associated documentation files (the "Software"), to deal

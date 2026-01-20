@@ -45,7 +45,7 @@ return [
             'icon' => 'far fa-lg fa-envelope-open-text',
         ],
         'clipboard' => [
-            'icon' => 'far fa-lg fa-copy'
-        ]
+            'icon' => 'far fa-lg fa-copy',
+        ],
     ],
 ];

@@ -3,14 +3,14 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
 This package allows you to drop a social media links component on any page in your application. It can be used using Font Awesome and some default css or renderless without any styling and dependencies using SVG's.
-This package is heavily inspired by the jorenvanhocht/laravel-share package.
+This package is heavily inspired by the `jorenvanhocht/laravel-share` package.
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require codedor/laravel-social-media-share
+composer require wotz/laravel-social-media-share
 ```
 
 Publish the package config & resource files.
@@ -73,7 +73,7 @@ For the full documentation, check [here](./docs/index.md).
 ## Testing
 
 ```bash
-vendor/bin/phpunit
+vendor/bin/pest
 ```
 
 ## Changelog
