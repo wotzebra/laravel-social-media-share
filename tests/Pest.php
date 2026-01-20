@@ -1,5 +1,5 @@
 <?php
 
-use Codedor\SocialMediaShare\Tests\TestCase;
+use Wotz\SocialMediaShare\Tests\TestCase;
 
 uses(TestCase::class)->in('Feature');

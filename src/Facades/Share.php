@@ -1,14 +1,14 @@
 <?php
 
-namespace Codedor\SocialMediaShare\Facades;
+namespace Wotz\SocialMediaShare\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * Class Share
  *
- * @package Codedor\SocialMediaShare\Facades
  * @author  Sofian Mourabit <sofian@codedor.be>
+ *
  * @since   2019-10-02
  *
  * @method static currentPage(string $title = null, $options = [],$prefix = null, $suffix = null)
@@ -23,9 +23,8 @@ use Illuminate\Support\Facades\Facade;
  * @method static string __toString()
  * @method static void setPrefixAndSuffix($prefix, $suffix)
  *
- * @see \Codedor\Share\Share
+ * @see \Wotz\Share\Share
  */
-
 class Share extends Facade
 {
     protected static function getFacadeAccessor()

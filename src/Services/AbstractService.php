@@ -1,6 +1,6 @@
 <?php
 
-namespace Codedor\SocialMediaShare\Services;
+namespace Wotz\SocialMediaShare\Services;
 
 use Illuminate\Support\HtmlString;
 
@@ -8,19 +8,19 @@ abstract class AbstractService
 {
     /** @var array */
     protected $options = [];
+
     /** @var string */
     protected $linkPrefix = 'js-social-media-share ';
 
     /**
      * Build a single link
      *
-     * @param $provider
-     * @param string $url
+     * @param  $provider
      */
-    public function buildLink(string $url, string $icon = '', string $js = null)
+    public function buildLink(string $url, string $icon = '', ?string $js = null)
     {
         $class = $this->linkPrefix;
-        $class .= key_exists('class', $this->options) ? $this->options['class'] : '';
+        $class .= array_key_exists('class', $this->options) ? $this->options['class'] : '';
 
         $className = $this->getClassName();
 

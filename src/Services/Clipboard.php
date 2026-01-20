@@ -1,6 +1,6 @@
 <?php
 
-namespace Codedor\SocialMediaShare\Services;
+namespace Wotz\SocialMediaShare\Services;
 
 use Illuminate\Support\Facades\Config;
 

@@ -1,17 +1,20 @@
 <?php
 
-namespace Codedor\SocialMediaShare\Components;
+namespace Wotz\SocialMediaShare\Components;
 
-use Codedor\SocialMediaShare\Share as SocialMediaShare;
+use Wotz\SocialMediaShare\Share as SocialMediaShare;
 use Illuminate\View\Component;
 
 class Share extends Component
 {
     public $title;
+
     public $summary;
 
     public string $extraClasses;
+
     public string $prefix;
+
     public string $suffix;
 
     public $shareOptions = [

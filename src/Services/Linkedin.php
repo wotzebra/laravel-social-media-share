@@ -1,26 +1,27 @@
 <?php
 
-namespace Codedor\SocialMediaShare\Services;
+namespace Wotz\SocialMediaShare\Services;
 
 use Illuminate\Support\Facades\Config;
 
 /**
  * Class Linkedin
  *
- * @package Codedor\SocialMediaShare
  * @author  Sofian Mourabit <sofian@codedor.be>
+ *
  * @since   2019-10-02
  */
-
 class Linkedin extends AbstractService
 {
-
     /** @var string */
     protected $base;
+
     /** @var string */
     protected $icon;
+
     /** @var string */
     protected $mini;
+
     /** @var string */
     protected $summary;
 

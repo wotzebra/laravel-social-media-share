@@ -1,17 +1,16 @@
 <?php
 
-namespace Codedor\SocialMediaShare\Services;
+namespace Wotz\SocialMediaShare\Services;
 
 use Illuminate\Support\Facades\Config;
 
 /**
  * Class Mail
  *
- * @package Codedor\SocialMediaShare
  * @author  Jyrki De Neve <jyrki@codedor.be>
+ *
  * @since   2020-01-30
  */
-
 class Mail extends AbstractService
 {
     /** @var string */
